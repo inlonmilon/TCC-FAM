@@ -275,6 +275,7 @@ p{
         padding: 3.5rem 7rem;
         display: flex;
         gap: 15rem;
+        height: 94svh;
     }
 
     #bannerAp{
@@ -282,7 +283,6 @@ p{
         width: 40%;
         border-radius: 8px;
         padding: 2rem;
-        height: 39.7rem;
         display: flex;
     }
 
