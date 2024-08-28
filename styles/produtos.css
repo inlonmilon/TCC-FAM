@@ -181,6 +181,45 @@ p{
     height: 1.5rem;
 }
 
+#mainCategoria{
+    padding: 5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#mainCategoria h1{
+    text-align: center;
+}
+
+#grid{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.card{
+    width: 20rem;
+    display: flex;
+    gap: .3rem;
+    border-radius: 10px;
+}
+
+.cardImg{
+    height: 20rem;
+    background-color: var(--footer2);
+}
+
+.cardText{
+    background-color: var(--section);
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--background-color);
+}
+
 @media screen and (min-width: 1200px){
     #headerMobile{
         display: none;
@@ -341,6 +380,33 @@ p{
         color: var(--details);
     }
 
+    #mainCategoria{
+        padding: 6rem 7rem 10rem;
+    }
+
+    #grid{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .card{
+        width: 15rem;
+        border: none !important;
+
+    }
+
+    .cardImg{
+        height: 14rem;
+        border-radius: 4px 4px 0 0;
+    }
+
+    .cardText{
+        height: 2.5rem;
+        font-weight: lighter;
+        border-radius: 0 0 4px 4px;
+    }
+
     #socialContato{
         display: flex;
         flex-direction: row;
@@ -354,5 +420,4 @@ p{
         padding: 3rem 0;
         margin-bottom: 0;
     }
-
 }
