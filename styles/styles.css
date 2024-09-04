@@ -23,6 +23,7 @@ P {
 }
 ul{
     padding: 0 !important;
+    padding-left: 0 !important;
 }
 
 img{
@@ -44,7 +45,7 @@ header {
 
 #heroSection {
     background: linear-gradient(to bottom, #FF3333, #ba1a1a);
-    padding: 2.5rem 1rem;
+    padding: 2.5rem 1.5rem;
     height: 100svh;
 }
 
@@ -93,7 +94,7 @@ header {
 }
 
 #produtosProntos {
-    padding: 4rem 1rem;
+    padding: 4rem 1.5rem;
 }
 
 .titleProdutos {
@@ -163,9 +164,8 @@ header {
 }
 
 .feedback {
-    padding: 4rem 1rem;
-    display: none;
-    /*display: flex;*/
+    padding: 4rem 1.5rem;
+    display: flex;
     flex-direction: column;
 }
 
@@ -185,58 +185,42 @@ header {
     gap: 2rem;
 }
 
-.unitComments {
+.unitComments{
     background-color: var(--feedback);
-    padding: 2rem;
-    border-radius: .5rem;
     display: flex;
-    height: 8rem;
+    padding: 1.5rem 2rem;
     gap: 2rem;
-}
-
-.feedbackImg {
-    background-color: var(--details);
-    width: 5.5rem;
-    height: 4rem;
-    border-radius: 99rem;
-
-}
-
-.feedbackContent {
-    text-align: end;
-    display: flex;
-    flex-direction: column;
-}
-
-.feedbackContent h3 {
-    font-size: 1rem;
-}
-
-.feedbackContent p {
+    border-radius: 10px;
     font-size: .8rem;
     font-weight: lighter;
-    font-style: italic;
+}
+
+.feedbackImg{
+    height: 5rem;
+    background-color: var(--details);
+    width: 12rem;
+    border-radius: 999px;
+    align-self: center;
+}
+
+.feedbackContent{
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 #action {
     background: linear-gradient(to bottom, #FF3333, #ba1a1a);
-    padding: 2rem 1rem;
+    padding: 4rem 1.5rem;
     height: 100svh;
-    color: var(--background-color);
-}
-
-#actionP {
     display: flex;
     flex-direction: column;
-    justify-content: end;
-    align-items: flex-end;
-    height: 20rem;
-    text-align: end;
+    justify-content: space-between
 }
 
 #actionP p {
     font-weight: lighter;
     font-size: 1rem;
+    color: var(--background-color);
 }
 
 .branco {
@@ -439,11 +423,10 @@ input{
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        padding: 7rem 0 10rem;
+
     }
 
-    section+section{
-        padding-bottom: 4rem;
-    }
 
     .titleProdutos{
         text-align: center;
@@ -513,7 +496,7 @@ input{
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin-bottom: 14rem;
+        padding: 7rem 0 10rem;
     }
 
     .titleProdutosE{
@@ -521,54 +504,42 @@ input{
     }
 
     .feedback{
-        /*display: flex;*/
-        display: none;
+        display: flex;
         align-items: center;
         justify-content: center;
-        height: 55rem;
-        padding: 3rem 0;
         gap: 2rem;
-    }
-
-    .feedbackImg{
-        height: 35%;
-        width: 14%;
+        padding: 7rem 0 12rem;
     }
 
     .feedbackContent h3{
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         letter-spacing: .5rem;
         color: var(--details);
         opacity: 70%;
     }
 
-    .feedbackContent p{
-        line-height: 2.5rem;
-    }
-
-    .comments{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
     .unitComments{
-        height: 30rem;
-        width: 64%;
+        padding: 5rem 15rem 9rem;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
         gap: 4rem;
+        border-radius: 20px;
     }
 
-    .unitComments h3, .unitComments p{
+    .feedbackImg{
+        height: 8rem;
+        width: 8rem;
+    }
+
+    .feedbackContent{
+        display: flex;
+        flex-direction: column;
         text-align: center;
+        gap: 1rem;
     }
 
-    .unitComments p{
-        width: 80%;
-        align-self: center;
+    .feedbackContent p{
+        font-size: 1.3rem;
     }
 
     #action{
