@@ -87,6 +87,11 @@ h1{
     display: none;
 }
 
+#card2{
+    margin-top: 11rem;
+    margin-bottom: 2rem;
+}
+
 @media screen and (min-width: 768px){
     main{
         background-color: var(--feedback);
