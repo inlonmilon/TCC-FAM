@@ -21,6 +21,11 @@ P {
     font-weight: 600;
     font-style: normal;
 }
+
+a{
+    text-decoration: none !important;
+}
+
 ul{
     padding: 0 !important;
     padding-left: 0 !important;
@@ -119,6 +124,8 @@ header {
     display: flex;
     flex-direction: column;
     gap: .3rem;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .cards img{
