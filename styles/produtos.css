@@ -18,6 +18,11 @@
     font-style: normal;
 }
 
+img{
+    max-width: 100%;
+    max-height: 95%;
+}
+
 header {
     display: none;
 }
@@ -230,7 +235,6 @@ p {
 }
 
 .imgVitrine{
-    background-color: var(--bttnHeader);
     height: 10rem;
 }
 
@@ -243,7 +247,10 @@ p {
     width: 100%;
     border-radius: 10px;
     overflow: hidden;
-    background-color: var(--details);
+}
+
+.textVitrine{
+    background-color: var(--bttnHeader);
 }
 
 .textVitrine{
@@ -387,7 +394,7 @@ p {
     }
 
     #bubblesDisp {
-        padding: 7.5rem 0;
+        padding: 7.5rem 7rem;
     }
 
     p {
@@ -403,11 +410,47 @@ p {
         font-size: 2rem !important;
     }
 
+    #boxVitrine{
+        row-gap: 3rem;
+    }
+
+    .imgVitrine{
+        height: 24rem;
+        background-color: unset;
+        align-self: center;
+    }
+
     #sobreOPedido {
         display: flex;
         padding: 8rem 7rem;
         gap: 5rem;
         justify-content: center;
+    }
+
+    .displayVitrine{
+        justify-content: space-evenly;
+    }
+
+    .vitrine{
+        width: 30%;
+        border-width: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .textVitrine{
+        justify-content: left;
+        padding: 1rem 1.5rem;
+        flex-direction: column;
+    }
+
+    .preco{
+        font-size: 1rem;
+        text-align: end ;
+    }
+
+    .textVitrine p{
+        font-size: 1.3rem;
     }
 
     #sobreText {
