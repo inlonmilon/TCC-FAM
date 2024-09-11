@@ -434,6 +434,19 @@ input{
 
     }
 
+    #lupa{
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    #inputNav{
+        width: 50%;
+    }
+
+    ::placeholder{
+        font-weight: lighter;
+    }
 
     .titleProdutos{
         text-align: center;
