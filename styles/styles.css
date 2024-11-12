@@ -47,44 +47,19 @@ header {
     display: none;
 }
 
-#heroSection h1,
-#action h1 {
-    font-size: 1.4rem;
+#heroSection{
     color: var(--background-color);
+    background: linear-gradient(to bottom, #ff3333, #ba1a1a);
+    height: 100svh;
 }
 
-#heroSection h1 {
-    text-align: end;
-}
-
-#bannerH {
+#bannerH{
+    padding: 3rem 1.5rem 2rem;
+    height: 90svh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
-    padding-bottom: 3rem;
-}
-
-#textoHero p {
-    font-size: 1rem;
-    color: var(--background-color);
-    font-weight: lighter;
-}
-
-.bttnHero {
-    margin-top: 1rem;
-    width: 11rem;
-    height: 2.5rem;
-    font-size: 1.2rem;
-    color: var(--background-color);
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.11),
-        rgba(0, 0, 0, 0.11)
-    );
-    border: var(--background-color);
-    border-radius: 0.2rem;
-    font-weight: lighter;
+    
 }
 
 #produtosProntos,
@@ -211,25 +186,6 @@ header {
     flex-direction: column-reverse;
 }
 
-#action {
-    background: linear-gradient(to bottom, #ff3333, #ba1a1a);
-    padding: 4rem 1.5rem;
-    height: 100svh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-#actionP p {
-    font-weight: lighter;
-    font-size: 1rem;
-    color: var(--background-color);
-}
-
-.branco {
-    height: 4rem;
-}
-
 #socialContato {
     background-color: var(--footer);
     padding: 4rem 2rem;
@@ -307,12 +263,19 @@ input {
     width: 100%;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
+    #headerMobile {
+        display: none;
+    }
+
+    h1{
+        font-size: 3rem !important;
+    }
+
     header {
-        padding: 0 12rem;
+        display: block;
+        padding: 0 7.5rem;
         display: flex;
-        gap: 5.5rem;
-        height: 4.5rem;
         background-color: var(--background-color);
         font-weight: 500;
         font-size: 1.2rem;
@@ -332,6 +295,16 @@ input {
     header nav ul {
         margin: 0 !important;
         padding: 0 !important;
+    }
+
+    .my-lg-0 {
+        display: flex;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .padding {
+        padding: 0;
     }
 
     .navMobile {
@@ -359,7 +332,6 @@ input {
         list-style: none;
         display: flex;
         flex-direction: row;
-        gap: 5rem;
     }
 
     .bttnHeader {
@@ -386,54 +358,35 @@ input {
         height: 1.3rem;
     }
 
-    #linha {
-        height: 1rem;
+    #heroSection{
+        background: var(--background-color);
+        height: 100svh;
+        padding: 8rem;
     }
-
-    #heroSection {
-        padding: 6rem 1rem 1rem;
-    }
-
-    #bannerH {
-        display: flex;
-        flex-direction: row-reverse;
-        color: var(--background-color);
-
-        padding: 4rem;
+    
+    #bannerH{
         background-image: url(../imagens/website/urso.png);
         background-repeat: no-repeat;
-        background-size: cover;
         background-position: center;
-        border-radius: 1rem;
-    }
-
-    #heroSection h1 {
-        font-size: 2.5rem;
-        text-align: end;
-        font-weight: 700;
-        margin-top: 2rem;
-    }
-
-    #textoHero {
+        background-size: cover;
+        padding: 6rem 8rem;
+        height: 80svh;
         display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        margin-bottom: 2rem;
-        align-self: flex-end;
+        justify-content: space-between;
+        background-color: green;
+        border-radius: 1rem;
+
     }
 
-    #textoHero p {
+    #bannerH p{
         font-size: 1.5rem;
+        font-weight: lighter;
     }
 
-    .bttnHero {
-        width: 15rem;
-        height: 3.5rem;
-        -webkit-transition: all 200ms ease-in-out;
-        -ms-transition: all 200ms ease-in-out;
-        -moz-transition: all 200ms ease-in-out;
-        transition: all 200ms ease-in-out;
+    #bannerH h1{
+        text-align: end;
     }
+
     #produtosProntos {
         background-color: var(--background-color);
         display: flex;
