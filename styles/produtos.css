@@ -53,18 +53,37 @@ header {
 }
 
 #headerMobileBubbles{
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../imagens/website/BOX\ LUXO\ CACAU\ SHOW.jpg);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../imagens/website/BUBBLE\ MÉDIO\ DE\ MESA.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+
+}
+
+#headerMobileMaes{
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../imagens/website/diadasmaes.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: top;
 }
 
-#headerMobileMaes{
-    
+#headerMobileNatal{
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../imagens/website/natalFAM.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
 }
 
-
+#headerMobileAniv{
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../imagens/website/anivFAM.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+}
 
 main {
     background-color: var(--background-color);
@@ -274,7 +293,8 @@ p {
 
 
 @media screen and (min-width: 1200px) {
-    #headerMobile {
+    #headerMobileBox, #headerMobileBubbles, #headerMobileCaneca, #headerMobileAniv, #headerMobile,
+    #headerMobileMaes, #headerMobileNatal {
         display: none;
     }
 
