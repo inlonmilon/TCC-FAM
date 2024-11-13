@@ -92,6 +92,33 @@ h1{
     margin-bottom: 2rem;
 }
 
+.navMobile {
+    height: 3rem;
+    background-color: var(--footer);
+    padding: 1rem 2rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.navMobile > ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navMobileLink {
+    list-style: none;
+}
+
+.navMobileLink img {
+    height: 1.5rem;
+}
+
+nav ul{
+    padding-left: 0;
+}
+
 @media screen and (min-width: 768px){
     main{
         background-color: var(--feedback);

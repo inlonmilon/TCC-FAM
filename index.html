@@ -165,55 +165,32 @@
             </div>
 
             <div class="comments">
-                <div id="carouselExample" class="carousel slide">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="unitComments">
-                                <div class="feedbackImg"></div>
-                                <div class="feedbackContent">
-                                    <p>
-                                        Lorem ipsum dolor sit amet
-                                        consectetur Lorem ipsum
-                                    </p>
-                                    <h3>NOME</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="unitComments">
-                                <div class="feedbackImg"></div>
-                                <div class="feedbackContent">
-                                    <p>
-                                        Lorem ipsum dolor sit amet
-                                        consectetur Lorem ipsum
-                                    </p>
-                                    <h3>NOME</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="unitComments">
-                                <div class="feedbackImg"></div>
-                                <div class="feedbackContent">
-                                    <p>
-                                        Lorem ipsum dolor sit amet
-                                        consectetur Lorem ipsum
-                                    </p>
-                                    <h3>NOME</h3>
-                                </div>
-                            </div>
-                        </div>
+                <div class="unitComments">
+                    <div class="feedbackImg"><img src="./imagens/website/simony.png" alt=""></div>
+                    <div class="feedbackContent">
+                        <h3>SIMONY MORAIS</h3>
+                        <p>
+                            Os personalizados da Feito a Mão fizeram a alegria da festa da minha filha!
+                        </p>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                </div>
+                <div class="unitComments">
+                    <div class="feedbackImg"><img src="./imagens/website/gabi.png" alt=""></div>
+                    <div class="feedbackContent">
+                        <h3>GABRIELA LEITE</h3>
+                        <p>
+                            Adorei receber um trabalho como esse!
+                        </p>
+                    </div>
+                </div>
+                <div class="unitComments">
+                    <div class="feedbackImg"><img src="./imagens/website/franciele.png" alt=""></div>
+                    <div class="feedbackContent">
+                        <h3>FRANCIELE LIMA</h3>
+                        <p>
+                            A qualidade dos presentes é impressionante, me apaixonei nas boxs.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -224,12 +201,12 @@
         <div id="socialContato">
             <div id="redeSocial">
                 <h3>Nossas redes sociais</h3>
-                <a href="/">Instagram</a>
+                <a href="https://www.instagram.com/feitoamaopontocom/">Instagram</a>
                 <a href="/">Whatsapp</a>
             </div>
             <div id="contato">
                 <h3>Contato</h3>
-                <a href="/">(11)98888-9999</a>
+                <a href="/">(11)96914-1984</a>
                 <a href="/">feitoamao@gmail.com</a>
             </div>
         </div>
@@ -243,9 +220,6 @@
                 <a href="index.html"><img src="imagens/website/house.svg" alt="" /></a>
             </li>
             <li class="navMobileLink">
-                <a href="categoria.html"><img src="imagens/website/gift.svg" alt="" /></a>
-            </li>
-            <li class="navMobileLink">
                 <a href="/"><img src="imagens/website/search.svg" alt="" /></a>
             </li>
             <li class="navMobileLink">
@@ -253,6 +227,54 @@
             </li>
         </ul>
     </nav>
+
+    <modal id="popUp">
+        <main>
+            <section id="card">
+                <div class="cadastre">
+                    <h1>Cadastre-se</h1>
+                    <p>Não tem uma conta? Faça um cadastro para que possa realizar os seus pedidos</p>
+                    <button class="cadastreBttn">criar conta</button>
+                </div>
+                <div class="data">
+                    <div id="display">
+                        <h1>Bem-vindo de volta!</h1>
+                        <p>Faça login no nosso site para voltar a fazer seus pedidos</p>
+                    </div>
+                    <div id="dataDivInput">
+                        <input class="input" type="text" placeholder="email">
+                        <input class="input" type="text" placeholder="senha">
+                    </div>
+                    <div id="dataDivBttn">
+                        <button class="dataBttn">sign in</button>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="card2">
+                <div class="cadastre">
+                    <h1>Bem-vindo de volta!</h1>
+                    <p>Faça login no nosso site para voltar a fazer seus pedidos</p>
+                    <button class="cadastreBttn">sign in</button>
+                </div>
+                <div class="data">
+                    <div class="login">
+                        <h1>Cadastre-se</h1>
+                        <p>Não tem uma conta? Faça um cadastro para que possa realizar os seus pedidos</p>
+                    </div>
+                    <div id="dataDivInput">
+                        <input class="input" type="text" placeholder="nome">
+                        <input class="input" type="text" placeholder="email">
+                        <input class="input" type="text" placeholder="número">
+                        <input class="input" type="text" placeholder="senha">
+                    </div>
+                    <div id="dataDivBttn">
+                        <button class="dataBttn">criar conta</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </modal>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

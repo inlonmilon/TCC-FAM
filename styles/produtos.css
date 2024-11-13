@@ -30,10 +30,41 @@ header {
     padding: 1.5rem;
 }
 
-#headerMobile {
+#headerMobileBox, #headerMobileBubbles, #headerMobileCaneca, #headerMobileAniv, #headerMobile,
+#headerMobileMaes, #headerMobileNatal {
     height: 50svh;
-    background: linear-gradient(to bottom, #ff3333, #373737);
+    background-attachment: fixed;
 }
+
+#headerMobileCaneca{
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../imagens/website/caneca\ personalizada\ e\ mini\ panetone.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+}
+
+#headerMobileBox{
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../imagens/website/BOX\ LUXO\ CACAU\ SHOW.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+}
+
+#headerMobileBubbles{
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../imagens/website/BOX\ LUXO\ CACAU\ SHOW.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+}
+
+#headerMobileMaes{
+    
+}
+
+
 
 main {
     background-color: var(--background-color);
@@ -412,6 +443,24 @@ p {
 
     .vitrine{
         width: 50%;
+        -webkit-transition: all 200ms ease-in-out;
+        -ms-transition: all 200ms ease-in-out;
+        -moz-transition: all 200ms ease-in-out;
+        transition: all 200ms ease-in-out;
+    }
+
+    .vitrine:hover{
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+            rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        z-index: 2;
+
+        -webkit-transform: scale(1.1);
+
+        -ms-transform: scale(1.1);
+
+        -moz-transform: scale(1.1);
+
+        transform: scale(1.1);
     }
 
     .textVitrine{

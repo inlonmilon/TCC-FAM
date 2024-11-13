@@ -49,17 +49,21 @@ header {
 
 #heroSection{
     color: var(--background-color);
-    background: linear-gradient(to bottom, #ff3333, #ba1a1a);
     height: 100svh;
+    background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
+        url(../imagens/website/hsMobile.JPG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 #bannerH{
-    padding: 3rem 1.5rem 2rem;
-    height: 90svh;
+    padding: 3rem 1.5rem 4rem;
+    height: 95svh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
 }
 
 #produtosProntos,
@@ -164,26 +168,33 @@ header {
     gap: 2rem;
 }
 
-.unitComments {
+.unitComments{
     background-color: var(--feedback);
     display: flex;
-    padding: 1.5rem 2rem;
-    gap: 2rem;
-    font-size: 0.8rem;
-    font-weight: lighter;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 1rem;
+    gap: 1rem;
 }
 
-.feedbackImg {
-    background-color: var(--details);
-    min-height: 5rem;
-    min-width: 5rem;
-    border-radius: 999px;
+.feedbackImg{
     align-self: center;
 }
 
-.feedbackContent {
-    display: flex;
-    flex-direction: column-reverse;
+.feedbackImg img{
+    max-width: 5.75rem;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.feedbackContent h3{
+    font-size: 1rem;
+}
+
+.feedbackContent p{
+    color: var(--details);
+    opacity: 70%;
+    font-size: .7rem;
 }
 
 #socialContato {
