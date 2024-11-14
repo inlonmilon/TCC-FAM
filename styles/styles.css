@@ -128,7 +128,7 @@ header {
 }
 
 .cardText {
-    background-color: var(--section);
+    background-color: #ff3333da;
     color: var(--background-color);
 }
 
@@ -167,38 +167,49 @@ header {
 }
 
 .comments {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 2rem;
 }
 
 .unitComments{
-    background-color: var(--feedback);
     display: flex;
-    border-radius: 15px;
-    overflow: hidden;
+    flex-direction: column;
+    background-color: var(--feedback);
+    border-radius: 1rem;
     padding: 1rem;
-    gap: 1rem;
+    gap: .6rem;
+    border: solid 1px var(--bttnHeader);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
 .feedbackImg{
-    align-self: center;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 999px;
+    overflow: hidden;
+    border: solid 2px var(--footer);
 }
 
 .feedbackImg img{
-    max-width: 5.75rem;
-    border-radius: 999px;
-    overflow: hidden;
+    width: 100%;
+    height: 100%;
 }
 
-.feedbackContent h3{
+.feedbacks h3{
     font-size: 1rem;
+    align-self: center;
+}
+
+.feedbacks{
+    display: flex;
+    gap: 1rem;
+
 }
 
 .feedbackContent p{
     color: var(--details);
     opacity: 70%;
-    font-size: .7rem;
+    font-size: 1rem;
 }
 
 #socialContato {
@@ -234,7 +245,7 @@ header {
 }
 
 .navMobile {
-    height: 3rem;
+    height: 4rem;
     background-color: var(--footer);
     padding: 1rem 2rem;
     position: fixed;
@@ -260,7 +271,7 @@ input {
     display: none;
 }
 
-.comments {
+.comments{
     width: 100%;
 }
 
@@ -388,7 +399,6 @@ input {
         height: 80svh;
         display: flex;
         justify-content: space-between;
-        background-color: green;
         border-radius: 1rem;
 
     }
@@ -500,43 +510,46 @@ input {
         margin-bottom: 6rem;
     }
 
+    .comments{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+
     .feedback {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 2rem;
-        padding: 7rem 10rem 12rem;
+        padding: 7rem 12.5rem 8rem;
     }
 
     .feedbackContent h3 {
         font-size: 1.5rem;
-        letter-spacing: 0.5rem;
+        letter-spacing: 0.1rem;
         color: var(--details);
         opacity: 70%;
     }
 
     .unitComments {
-        padding: 5rem 0;
-        width: 100%;
         display: flex;
-        flex-direction: column;
-        gap: 4rem;
+       
     }
 
     .feedbackImg {
-        height: 8rem;
-        width: 8rem;
+        height: 6rem;
+        width: 6rem;
     }
 
     .feedbackContent {
         display: flex;
         flex-direction: column;
         text-align: center;
-        gap: 1rem;
     }
 
     .feedbackContent p {
-        font-size: 1.3rem;
+        font-size: 1rem;
+
     }
 
     #action {

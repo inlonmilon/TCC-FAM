@@ -17,6 +17,10 @@
     font-style: normal;
 }
 
+a{
+    text-decoration: none !important;
+}
+
 img {
     max-width: 100%;
     max-height: 95%;
@@ -31,7 +35,7 @@ header {
 }
 
 #headerMobileBox, #headerMobileBubbles, #headerMobileCaneca, #headerMobileAniv, #headerMobile,
-#headerMobileMaes, #headerMobileNatal {
+#headerMobileMaes, #headerMobileNatal, #headerMobileBBox, #headerMobileBAc {
     height: 50svh;
     background-attachment: fixed;
 }
@@ -85,6 +89,22 @@ header {
     background-position: top;
 }
 
+#headerMobileBBox{
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../imagens/website/BUBBLE\ PELUCIA\ AZUL.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+}
+
+#headerMobileBAc{
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../imagens/website/BOX\ BUBBLE\ ACRILIC.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+}
+
 main {
     background-color: var(--background-color);
 }
@@ -109,18 +129,24 @@ main {
 
 .bttnBubble {
     width: 8rem;
+    height: 3rem;
     border-style: none;
-    border-radius: 4px;
+    border-radius: 999px;
     padding: 0.2rem 1rem;
     display: flex;
     gap: 0.5rem;
     color: var(--background-color);
-    background-color: var(--section);
+    background-color: #ff3333e0;
+}
+
+.bttnBubble span{
+    font-size: .8rem;
+    align-self: center;
 }
 
 .bttnBubble img {
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     align-self: center;
 }
 
@@ -257,7 +283,7 @@ p {
 }
 
 .navMobile {
-    height: 3rem;
+    height: 4rem;
     background-color: var(--footer);
     padding: 1rem 2rem;
     position: fixed;
@@ -294,7 +320,7 @@ p {
 
 @media screen and (min-width: 1200px) {
     #headerMobileBox, #headerMobileBubbles, #headerMobileCaneca, #headerMobileAniv, #headerMobile,
-    #headerMobileMaes, #headerMobileNatal {
+    #headerMobileMaes, #headerMobileNatal, #headerMobileBBox, #headerMobileBAc {
         display: none;
     }
 
