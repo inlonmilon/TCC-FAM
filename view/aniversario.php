@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produtos Box Luxo</title>
+    <title>Produtos Aniversário</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" href="../styles/pedir.css">
@@ -14,8 +14,8 @@
 <body>
 
     <div class="container">
-        <h1 class="text-center">Produtos Box Luxo</h1>
-        <div class="card-container" id="boxLuxoProductsContainer">
+        <h1 class="text-center">Produtos Aniversário</h1>
+        <div class="card-container" id="AniversarioProductsContainer">
             <!-- Os produtos serão inseridos aqui via AJAX -->
         </div>
         <div class="resumopedido" id="resumopedido">
@@ -38,14 +38,14 @@
     </div>
 
     <script>
-        $(document).ready(function() {
-            // Função para listar os produtos do tipo "box_luxo"
-            function listarProdutosBoxLuxo() {
+           $(document).ready(function() {
+
+            function listarProdutosAniversario() {
                 $.ajax({
                     url: '../services/listar_produtos.php',
                     type: 'GET',
                     data: {
-                        term: 'box_luxo' // Alteração para o termo "box_luxo"
+                        term: 'aniversario' 
                     },
                     dataType: 'json',
                     success: function(response) {
@@ -61,10 +61,10 @@
                 });
             }
 
-            listarProdutosBoxLuxo(); // Chama a função ao carregar a página
+            listarProdutosAniversario(); // Chama a função ao carregar a página
 
             function atualizarCards(produtos) {
-                const container = $("#boxLuxoProductsContainer");
+                const container = $("#AniversarioProductsContainer");
                 container.empty();
 
                 produtos.forEach(p => {
@@ -341,7 +341,6 @@ $('#addToCartButton').on('click', function() {
 
         });
     </script>
-
 </body>
 
 </html>

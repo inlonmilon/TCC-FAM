@@ -3,7 +3,7 @@ session_start();
 
 // Verifica se o usuário está logado e se é um administrador
 if (!isset($_SESSION['tipo_usuario']) || $_SESSION['tipo_usuario'] !== 'administrador') {
-    header("Location: index.php");
+    header("Location: ../view/index.php");
     exit; // Certifique-se de usar exit após o redirecionamento
 }
 
@@ -26,7 +26,7 @@ $usuarios = $usuario->listarUsuarios();
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="backend.css">
+    <link rel="stylesheet" href="../styles/backend.css">
     <title>Registros de Usuários</title>
 </head>
 
@@ -38,23 +38,25 @@ $usuarios = $usuario->listarUsuarios();
             <input type="text" id="search" class="form-control2" placeholder="Pesquisar">
         </div>
 
-        <table class="table" id="usuariosTable">
-            <thead>
-                <tr>
-                    <th>ID Atual</th>
-                    <th>ID Novo</th>
-                    <th>Tipo</th>
-                    <th>Nome</th>
-                    <th>Telefone</th>
-                    <th>Email</th>
-                    <th>Nova Senha</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Dados serão inseridos aqui via AJAX -->
-            </tbody>
-        </table>
+        <div class="table-container">
+            <table class="table" id="usuariosTable">
+                <thead>
+                    <tr>
+                        <th>ID Atual</th>
+                        <th>ID Novo</th>
+                        <th>Tipo</th>
+                        <th>Nome</th>
+                        <th>Telefone</th>
+                        <th>Email</th>
+                        <th>Nova Senha</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dados serão inseridos aqui via AJAX -->
+                </tbody>
+            </table>
+        </div>
 
         <nav aria-label="Page navigation">
             <ul class="pagination" id="paginacao">

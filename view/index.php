@@ -20,8 +20,7 @@ if (isset($_SESSION['nome'])) {
     <link rel="shortcut icon" type="imagex/png" href="../imagens/website/balloon.png">
     <link rel="stylesheet" href="../styles/styles.css" />
     <link rel="stylesheet" href="../styles/index.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
@@ -58,7 +57,7 @@ if (isset($_SESSION['nome'])) {
             </p>
         </div>
 
-        <div class="cardSection">
+        <div class="cardSection" id="convencionais">
             <div class="cardProdutos">
                 <a id="caneca" href="caneca.php">
                     <div class="cards">
@@ -106,7 +105,7 @@ if (isset($_SESSION['nome'])) {
             </p>
         </div>
 
-        <div class="cardSection">
+        <div class="cardSection" id="especiais">
             <div class="cardProdutos">
                 <a id="dia_das_maes" href="dia_das_maes.php">
                     <div class="cards">
@@ -129,7 +128,7 @@ if (isset($_SESSION['nome'])) {
                         </button>
                     </div>
                 </a>
-                <a id="" href="../aniversarios.html"> <!--fazer pag php aniversarios-->
+                <a id="" href="../view/aniversario.php">
                     <div class="cards">
                         <div class="cardImg">
                             <img src="../imagens/catalogo/the_bubble.png" alt="" />
@@ -145,7 +144,7 @@ if (isset($_SESSION['nome'])) {
     </section>
 
 
-        <!--<nav id="navLinks">
+    <!--<nav id="navLinks">
             <span id="mensagemnome" class="mb-6"></span>
             <a id="linkRegistrosU" href="registros_usuarios.php" style="display:none;">Registros de usuários</a>
             <a id="linkRegistrosP" href="cadastro_produtos.php" style="display:none;">Registros de produtos</a>
@@ -153,146 +152,175 @@ if (isset($_SESSION['nome'])) {
         </nav>-->
 
 
-        <section class="feedback">
-            <div class="titleFeedback">
-                <h2>Feedbacks</h2>
-                <p>Alguns feedbacks de nossos clientes</p>
-            </div>
+    <section class="feedback">
+        <div class="titleFeedback">
+            <h2>Feedbacks</h2>
+            <p>Alguns feedbacks de nossos clientes</p>
+        </div>
 
-            <div class="comments">
-                <div class="unitComments">
-                    <div class="feedbacks">
-                        <div class="feedbackImg"><img src="../imagens/website/simony.png" alt=""></div>
-                        <h3>SIMONY MORAIS</h3>
-                    </div>
-                    <div class="feedbackContent">
-                        <p>
-                            Os personalizados da Feito a Mão fizeram a alegria da festa da minha filha!
-                        </p>
-                    </div>
+        <div class="comments">
+            <div class="unitComments">
+                <div class="feedbacks">
+                    <div class="feedbackImg"><img src="../imagens/website/simony.png" alt=""></div>
+                    <h3>SIMONY MORAIS</h3>
                 </div>
-                <div class="unitComments">
-                    <div class="feedbacks">
-                        <div class="feedbackImg"><img src="../imagens/website/gabi.png" alt=""></div>
-                        <h3>GABRIELA LEITE</h3>
-                    </div>
-                    <div class="feedbackContent">
-                        <p>
-                            "Adorei receber um trabalho como esse!"
-                        </p>
-                    </div>
-                </div>
-                <div class="unitComments">
-                    <div class="feedbacks">
-                        <div class="feedbackImg"><img src="../imagens/website/franciele.png" alt=""></div>
-                        <h3>FRANCIELE LIMA</h3>
-                    </div>
-                    <div class="feedbackContent">
-                        <p>
-                            A qualidade dos presentes é impressionante, me apaixonei nas boxs.
-                        </p>
-                    </div>
+                <div class="feedbackContent">
+                    <p>
+                        Os personalizados da Feito a Mão fizeram a alegria da festa da minha filha!
+                    </p>
                 </div>
             </div>
-        </section>
+            <div class="unitComments">
+                <div class="feedbacks">
+                    <div class="feedbackImg"><img src="../imagens/website/gabi.png" alt=""></div>
+                    <h3>GABRIELA LEITE</h3>
+                </div>
+                <div class="feedbackContent">
+                    <p>
+                        "Adorei receber um trabalho como esse!"
+                    </p>
+                </div>
+            </div>
+            <div class="unitComments">
+                <div class="feedbacks">
+                    <div class="feedbackImg"><img src="../imagens/website/franciele.png" alt=""></div>
+                    <h3>FRANCIELE LIMA</h3>
+                </div>
+                <div class="feedbackContent">
+                    <p>
+                        A qualidade dos presentes é impressionante, me apaixonei nas boxs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <div class="branco"></div>
-        </main>
+    <div class="branco"></div>
+    </main>
 
-        <?php
-        include '../components/footer.php';
-        ?>
+    <?php
+    include '../components/footer.php';
+    ?>
 
-        <nav class="navMobile">
-            <ul>
-                <li class="navMobileLink">
-                    <a href="index.php"><img src="../imagens/website/house.svg" alt="" /></a>
-                </li>
-                <li class="navMobileLink">
-                    <a href="/"><img src="../imagens/website/search.svg" alt="" /></a>
-                </li>
-                <li class="navMobileLink">
-                    <a href="cadastro.php"><img src="../imagens/website/person.svg" alt="" /></a>
-                </li>
-            </ul>
-        </nav>
+    <?php
+    include '../components/navmobile.php';
+    ?>
 
-        <modal id="popUp">
-            <main>
-                <section id="card">
-                    <div class="cadastre">
-                        <h1>Cadastre-se</h1>
-                        <p>Não tem uma conta? Faça um cadastro para que possa realizar os seus pedidos</p>
-                        <button class="cadastreBttn">criar conta</button>
-                    </div>
-                    <div class="data">
-                        <div id="display">
-                            <h1>Bem-vindo de volta!</h1>
-                            <p>Faça login no nosso site para voltar a fazer seus pedidos</p>
-                        </div>
-                        <div id="dataDivInput">
-                            <input class="input" type="text" placeholder="email">
-                            <input class="input" type="text" placeholder="senha">
-                        </div>
-                        <div id="dataDivBttn">
-                            <button class="dataBttn">sign in</button>
-                        </div>
-                    </div>
-                </section>
 
-                <section id="card2">
-                    <div class="cadastre">
+
+    <div class="modal">
+        <main>
+            <section id="card">
+                <div class="cadastre">
+                    <h1>Cadastre-se</h1>
+                    <p>Não tem uma conta? Faça um cadastro para que possa realizar os seus pedidos</p>
+                    <button class="cadastreBttn">criar conta</button>
+                </div>
+                <div class="data">
+                    <div id="display">
                         <h1>Bem-vindo de volta!</h1>
                         <p>Faça login no nosso site para voltar a fazer seus pedidos</p>
-                        <button class="cadastreBttn">sign in</button>
                     </div>
-                    <div class="data">
-                        <div class="login">
-                            <h1>Cadastre-se</h1>
-                            <p>Não tem uma conta? Faça um cadastro para que possa realizar os seus pedidos</p>
-                        </div>
-                        <div id="dataDivInput">
-                            <input class="input" type="text" placeholder="nome">
-                            <input class="input" type="text" placeholder="email">
-                            <input class="input" type="text" placeholder="número">
-                            <input class="input" type="text" placeholder="senha">
-                        </div>
-                        <div id="dataDivBttn">
-                            <button class="dataBttn">criar conta</button>
-                        </div>
+                    <div id="dataDivInput">
+                        <input class="input" type="text" placeholder="email">
+                        <input class="input" type="text" placeholder="senha">
                     </div>
-                </section>
-            </main>
-        </modal>
+                    <div id="dataDivBttn">
+                        <button class="dataBttn">sign in</button>
+                    </div>
+                </div>
+            </section>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
+            <section id="card2">
+                <div class="cadastre">
+                    <h1>Bem-vindo de volta!</h1>
+                    <p>Faça login no nosso site para voltar a fazer seus pedidos</p>
+                    <button class="cadastreBttn">sign in</button>
+                </div>
+                <div class="data">
+                    <div class="login">
+                        <h1>Cadastre-se</h1>
+                        <p>Não tem uma conta? Faça um cadastro para que possa realizar os seus pedidos</p>
+                    </div>
+                    <div id="dataDivInput">
+                        <input class="input" type="text" placeholder="nome">
+                        <input class="input" type="text" placeholder="email">
+                        <input class="input" type="text" placeholder="número">
+                        <input class="input" type="text" placeholder="senha">
+                    </div>
+                    <div id="dataDivBttn">
+                        <button class="dataBttn">criar conta</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
 
-        <script>
-            // Passa o nome do usuário para uma variável do JavaScript
-            var nomeUsuario = "<?php echo $nome_usuario; ?>";
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-            // Exibe o nome do usuário no elemento com id "mensagemnome"
-            document.getElementById("mensagemnome").innerHTML = nomeUsuario;
+    <script>
+        // Passa o nome do usuário para uma variável do JavaScript
+        var nomeUsuario = "<?php echo $nome_usuario; ?>";
 
-            // Ao clicar no nome do usuário, mostra/esconde o dropdown
+        // Exibe o nome do usuário no elemento com id "mensagemnome"
+        document.getElementById("mensagemnome").innerHTML = nomeUsuario;
+
+        document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("mensagemnome").addEventListener("click", function() {
                 var dropdownContent = document.getElementById("dropdownContent");
                 // Alterna a visibilidade do conteúdo do dropdown
                 dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
             });
+        });
 
-            // Fechar o dropdown se clicar fora dele
-            window.onclick = function(event) {
-                if (!event.target.matches('#mensagemnome') && !event.target.matches('.dropdown-content') && !event.target.matches('.dropdown-content a')) {
-                    var dropdownContent = document.getElementById("dropdownContent");
-                    dropdownContent.style.display = "none";
-                }
+        // Fechar o dropdown se clicar fora dele
+        window.onclick = function(event) {
+            if (!event.target.matches('#mensagemnome') && !event.target.matches('.dropdown-content') && !event.target.matches('.dropdown-content a')) {
+                var dropdownContent = document.getElementById("dropdownContent");
+                dropdownContent.style.display = "none";
             }
+        }
 
-            // Ações dos botões no dropdown
-            $('#logoutButton').on('click', function() {
+        document.addEventListener("DOMContentLoaded", () => {
+            // Captura os elementos
+            const mensagemnomemobile = document.getElementById("mensagemnomemobile");
+            const dropdown = document.getElementById("dropdownContentMobile");
+
+            // Certifica-se de que os elementos existem antes de adicionar os eventos
+            if (mensagemnomemobile && dropdown) {
+
+                // Inicializa o dropdown como oculto
+                dropdown.style.display = "none";
+
+                // Função para alternar o dropdown
+                function toggleDropdown() {
+                    if (dropdown.style.display === "block") {
+                        dropdown.style.display = "none";
+                    } else {
+                        dropdown.style.display = "block";
+                    }
+                }
+
+                // Adiciona o evento de clique no ícone da pessoa (mensagemnomemobile)
+                mensagemnomemobile.addEventListener("click", toggleDropdown);
+
+                // Fecha o dropdown ao clicar fora dele
+                window.addEventListener("click", (event) => {
+                    if (event.target !== mensagemnomemobile && !dropdown.contains(event.target)) {
+                        dropdown.style.display = "none";
+                    }
+                });
+
+                console.log("Eventos registrados com sucesso para mensagemnomemobile!");
+            }
+        });
+
+
+
+
+        // Ações dos botões no dropdown
+        $(document).ready(function() {
+            $('#logoutButton, #logoutButtonMobile').on('click', function() {
                 $.ajax({
                     url: '../controllers/logout.php', // URL do script de logout
                     type: 'POST',
@@ -301,7 +329,7 @@ if (isset($_SESSION['nome'])) {
                         // Redireciona após 1 segundo
                         setTimeout(function() {
                             window.location.href = 'index.php'; // Redireciona para a página inicial
-                        }, 1);
+                        }, 0);
                     },
                     error: function() {
                         $('#mensagem').html('<div style="color:red;">Erro ao realizar logout.</div>');
@@ -309,6 +337,9 @@ if (isset($_SESSION['nome'])) {
                 });
             });
 
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
             $(document).ready(function() {
                 // Simulação de chamada AJAX para verificar o estado do usuário
                 $.ajax({
@@ -323,17 +354,39 @@ if (isset($_SESSION['nome'])) {
                             $('#linkLogin').show();
                             $('#linkCadastro').show();
                             $('#logoutButton').hide();
-                            $('#linkRegistrosU').hide();
-                            $('#linkRegistrosP').hide();
-                            $('#linkRegistrosPe').hide();
+                            $('#linkProd').hide();
+                            $('#linkUser').hide();
+                            $('#linkPedidos').hide();
                             $('#linkPerfil').hide();
+                            $('#linkLoginMobile').show();
+                            $('#linkCadastroMobile').show();
+                            $('#logoutButtonMobile').hide();
+                            $('#linkProdMobile').hide();
+                            $('#linkUserMobile').hide();
+                            $('#linkPedidosMobile').hide();
+                            $('#linkPerfilMobile').hide();
                         } else {
                             $('#logoutButton').show();
                             $('#linkPerfil').show();
+                            $('#linkCadastro').hide();
+                            $('#linkLogin').hide();
+                            $('#logoutButtonMobile').show();
+                            $('#linkPerfilMobile').show();
+                            $('#linkCadastroMobile').hide();
+                            $('#linkLoginMobile').hide();
+                            $('#linkUser').hide();
+                            $('#linkProd').hide();
+                            $('#linkPedidos').hide();
+                            $('#linkUserMobile').hide();
+                            $('#linkProdMobile').hide();
+                            $('#linkPedidosMobile').hide();
                             if (tipoUsuario === 'administrador') {
-                                $('#linkRegistrosU').show();
-                                $('#linkRegistrosP').show();
-                                $('#linkRegistrosPe').show();
+                                $('#linkUser').show();
+                                $('#linkProd').show();
+                                $('#linkPedidos').show();
+                                $('#linkUserMobile').show();
+                                $('#linkProdMobile').show();
+                                $('#linkPedidosMobile').show();
                             }
                         }
                     },
@@ -342,7 +395,8 @@ if (isset($_SESSION['nome'])) {
                     }
                 });
             });
-        </script>
+        });
+    </script>
 
 
 </body>
