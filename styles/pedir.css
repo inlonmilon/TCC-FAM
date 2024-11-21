@@ -68,6 +68,7 @@ h1 {
 }
 
 .product-info .desc_prod {
+    margin-bottom: 0 !important;
     font-size: 0.75rem;
     color: #666;
     margin-bottom: 10px;

@@ -70,7 +70,8 @@ header {
 }
 
 #nomeSite h2 {
-  margin-top: 0.75rem !important;
+  padding: 0;
+  margin-top: 0.75rem;
   font-family: "Style Script", serif !important;
   font-size: 1.75rem !important;
   color: #000 !important;
@@ -629,9 +630,4 @@ input {
   .dropdown {
     position: relative;
   }
-
-
-
-
-
 }

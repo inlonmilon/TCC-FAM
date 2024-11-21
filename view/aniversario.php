@@ -1,51 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produtos Aniversário</title>
+    <title>Aniversários</title>
+    <link rel="shortcut icon" type="imagex/png" href="../imagens/website/balloon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" href="../styles/pedir.css">
+    <link rel="stylesheet" href="../styles/produtos.css">
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
-
-    <div class="container">
-        <h1 class="text-center">Produtos Aniversário</h1>
-        <div class="card-container" id="AniversarioProductsContainer">
-            <!-- Os produtos serão inseridos aqui via AJAX -->
-        </div>
-        <div class="resumopedido" id="resumopedido">
-            <div class="summary-container mt-4" id="summaryContainer">
-                <h3>Resumo do Pedido</h3>
-                <div class="summary-list">
-                    <!-- Resumo dos itens selecionados será inserido aqui -->
+    <?php
+    include '../components/header.php';
+    ?>
+    
+    <main>
+        <section id="headerMobileAniv"></section>
+        <div class="padding">
+            <section id="apresentacao">
+                <div id="bannerAp">
+                    <div id="apresentacaoText">
+                        <h1>Aniversários</h1>
+                        <p>Presentear aniversariantes com nossos produtos personalizados é uma forma especial de
+                            celebrar. Nossas boxes de luxo, canecas personalizadas e bexigas festivas criam uma
+                            experiência memorável, seja para surpreender alguém especial ou para se mimar.</p>
+                    </div>
                 </div>
-                <div class="summary-total mt-2">
-                    <strong>Total: R$ <span id="totalPrice">0.00</span></strong>
+            </section>
+            <section id="bubblesDisp">
+                <div id="bubblesDispText">
+                    <h2>Presentes incríveis</h2>
+                    <p>para construir lembranças inesquecíveis</p>
                 </div>
+                <div id="boxVitrine">
+                    <div class="displayVitrine" id="canecaProductsContainer">
+                        <div class="card-container" id="AniversarioProductsContainer">
+                            <!-- Os produtos serão inseridos aqui via AJAX -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+    </main>
+    <div class="resumopedido" id="resumopedido">
+        <div class="summary-container mt-4" id="summaryContainer">
+            <h3>Resumo do Pedido</h3>
+            <div class="summary-list">
+                <!-- Resumo dos itens selecionados será inserido aqui -->
             </div>
-            <div class="">
-                <button id="sendButton" class="btn btn-primary">Enviar</button>
-                <button id="addToCartButton" class="btn btn-primary">Adicionar ao Carrinho</button>
-                <div id="messageContainer"></div>
+            <div class="summary-total mt-2">
+                <strong>Total: R$ <span id="totalPrice">0.00</span></strong>
             </div>
-
         </div>
+        <div class="">
+            <button id="sendButton" class="btn btn-primary">Enviar</button>
+            <button id="addToCartButton" class="btn btn-primary">Adicionar ao Carrinho</button>
+            <div id="messageContainer"></div>
+        </div>
+
     </div>
 
     <script>
-           $(document).ready(function() {
+        $(document).ready(function() {
 
             function listarProdutosAniversario() {
                 $.ajax({
                     url: '../services/listar_produtos.php',
                     type: 'GET',
                     data: {
-                        term: 'aniversario' 
+                        term: 'aniversario'
                     },
                     dataType: 'json',
                     success: function(response) {
@@ -70,10 +105,10 @@
                 produtos.forEach(p => {
                     const card = `
             <div class="product-card" data-id="${p.id_prod}" data-preco="${p.preco_prod}">
-                <img src="${p.img_prod}" alt="Imagem do Produto">
+                <div class='imgVitrine'><img src="${p.img_prod}" alt="Imagem do Produto"></div>
                 <div class="product-info">
                     <h5>${p.nome_prod}</h5>
-                    <div class="desc_prod" title="${p.desc_prod}">${p.desc_prod}</div>
+                    <div class="desc_prod" title="${p.desc_prod}"><h5>${p.desc_prod}</h5></div>
 
                     <div class="price">R$ <span class="price-value">${p.preco_prod}</span></div>
                 </div>
@@ -143,11 +178,11 @@
 
                     const resumoItem = `
             <div class="summary-item d-flex align-items-center mb-2">
-                <img src="${imgSrc}" alt="${nomeProduto}" class="img-sumary mr-2" style="width: 5rem; height: 5rem;">
                 <div>
-                    <strong>${nomeProduto}</strong><br>
+                <img src="${imgSrc}" alt="${nomeProduto}" class="img-sumary mr-2" style="width: 5rem; height: 5rem;">
+                    <h3>${nomeProduto}<h3><br>
                     Quantidade: ${quantidade}<br>
-                    Preço: R$ ${precoProduto.toFixed(2)}
+                    <p>R$ ${precoProduto.toFixed(2)}</p>
                 </div>
             </div>
         `;
@@ -213,134 +248,139 @@
             }
 
             $('#sendButton').on('click', function() {
-    const selectedProducts = [];
-    $('.product-card.selected').each(function() {
-        const productId = $(this).data('id');
-        const productName = $(this).find('h5').text();
-        const productDesc = $(this).find('.desc_prod').attr('title');
-        const quantity = parseInt($(this).find('.quantity').text());
+                const selectedProducts = [];
+                $('.product-card.selected').each(function() {
+                    const productId = $(this).data('id');
+                    const productName = $(this).find('h5').text();
+                    const productDesc = $(this).find('.desc_prod').attr('title');
+                    const quantity = parseInt($(this).find('.quantity').text());
 
-        // Adiciona as informações do produto ao array
-        selectedProducts.push({
-            id: productId,
-            nome: productName,
-            descricao: productDesc,
-            quantidade: quantity
-        });
-    });
+                    // Adiciona as informações do produto ao array
+                    selectedProducts.push({
+                        id: productId,
+                        nome: productName,
+                        descricao: productDesc,
+                        quantidade: quantity
+                    });
+                });
 
-    console.log('Produtos selecionados:', selectedProducts); // Log para depuração
+                console.log('Produtos selecionados:', selectedProducts); // Log para depuração
 
-    if (selectedProducts.length > 0) {
-        $.ajax({
-            url: '../services/enviar_pedidos.php',
-            type: 'POST',
-            data: {
-                produtos: JSON.stringify(selectedProducts) // Envia os produtos como JSON
-            },
-            dataType: 'json',
-            success: function(response) {
-                console.log('Resposta do servidor:', response); // Log da resposta do servidor
-                const alertClass = response.status === 'success' ? 'alert-success' : 'alert-danger';
-                $('#messageContainer').html(`
+                if (selectedProducts.length > 0) {
+                    $.ajax({
+                        url: '../services/enviar_pedidos.php',
+                        type: 'POST',
+                        data: {
+                            produtos: JSON.stringify(selectedProducts) // Envia os produtos como JSON
+                        },
+                        dataType: 'json',
+                        success: function(response) {
+                            console.log('Resposta do servidor:', response); // Log da resposta do servidor
+                            const alertClass = response.status === 'success' ? 'alert-success' : 'alert-danger';
+                            $('#messageContainer').html(`
                     <div class="alert ${alertClass}" role="alert">
                         ${response.message}
                     </div>
                 `);
-            },
-            error: function(jqXHR) {
-                try {
-                    const response = JSON.parse(jqXHR.responseText); // Tenta analisar a resposta como JSON
-                    $('#messageContainer').html(`
+                        },
+                        error: function(jqXHR) {
+                            try {
+                                const response = JSON.parse(jqXHR.responseText); // Tenta analisar a resposta como JSON
+                                $('#messageContainer').html(`
                         <div class="alert alert-danger" role="alert">
                             ${response.message}
                         </div>
                     `); // Exibe a mensagem de erro do servidor
-                } catch (e) {
-                    $('#messageContainer').html(`
+                            } catch (e) {
+                                $('#messageContainer').html(`
                         <div class="alert alert-danger" role="alert">
                             <strong>Erro desconhecido!</strong> Por favor, tente novamente.
                         </div>
                     `); // Exibe mensagem padrão se não for JSON
-                }
-            }
-        });
-    } else {
-        $('#messageContainer').html(`
+                            }
+                        }
+                    });
+                } else {
+                    $('#messageContainer').html(`
             <div class="alert alert-warning" role="alert">
                 <strong>Atenção!</strong> Nenhum produto selecionado.
             </div>
         `);
-    }
-});
+                }
+            });
 
 
-$('#addToCartButton').on('click', function() {
-    const selectedProducts = [];
+            $('#addToCartButton').on('click', function() {
+                const selectedProducts = [];
 
-    // Percorre os produtos selecionados
-    $('.product-card.selected').each(function() {
-        const productId = $(this).data('id');
-        const quantity = parseInt($(this).find('.quantity').text());
-        const productName = $(this).find('h5').text();
-        const productDesc = $(this).find('.desc_prod').attr('title');
-        const price = parseFloat($(this).data('preco')) * quantity;
+                // Percorre os produtos selecionados
+                $('.product-card.selected').each(function() {
+                    const productId = $(this).data('id');
+                    const quantity = parseInt($(this).find('.quantity').text());
+                    const productName = $(this).find('h5').text();
+                    const productDesc = $(this).find('.desc_prod').attr('title');
+                    const price = parseFloat($(this).data('preco')) * quantity;
 
-        selectedProducts.push({
-            id: productId,
-            nome: productName,
-            descricao: productDesc,
-            quantidade: quantity,
-            valor_total: price
-        });
-    });
+                    selectedProducts.push({
+                        id: productId,
+                        nome: productName,
+                        descricao: productDesc,
+                        quantidade: quantity,
+                        valor_total: price
+                    });
+                });
 
-    // Verifica se há produtos selecionados
-    if (selectedProducts.length > 0) {
-        $.ajax({
-            url: '../services/adicionar_carrinho.php',
-            type: 'POST',
-            data: {
-                produtos: selectedProducts
-            },
-            dataType: 'json',
-            success: function(response) {
-                console.log('Resposta do servidor:', response);
-                const alertClass = response.status === 'success' ? 'alert-success' : 'alert-danger';
-                $('#messageContainer').html(`
+                // Verifica se há produtos selecionados
+                if (selectedProducts.length > 0) {
+                    $.ajax({
+                        url: '../services/adicionar_carrinho.php',
+                        type: 'POST',
+                        data: {
+                            produtos: selectedProducts
+                        },
+                        dataType: 'json',
+                        success: function(response) {
+                            console.log('Resposta do servidor:', response);
+                            const alertClass = response.status === 'success' ? 'alert-success' : 'alert-danger';
+                            $('#messageContainer').html(`
                     <div class="alert ${alertClass}" role="alert">
                         ${response.message}
                     </div>
                 `);
-            },
-            error: function(jqXHR) {
-                try {
-                    const response = JSON.parse(jqXHR.responseText); // Tenta analisar a resposta como JSON
-                    $('#messageContainer').html(`
+                        },
+                        error: function(jqXHR) {
+                            try {
+                                const response = JSON.parse(jqXHR.responseText); // Tenta analisar a resposta como JSON
+                                $('#messageContainer').html(`
                         <div class="alert alert-danger" role="alert">
                              ${response.message}
                         </div>
                     `); // Exibe a mensagem de erro
-                } catch (e) {
-                    $('#messageContainer').html(`
+                            } catch (e) {
+                                $('#messageContainer').html(`
                         <div class="alert alert-danger" role="alert">
                             <strong>Erro desconhecido. Por favor, tente novamente.</strong>
                         </div>
                     `); // Exibe mensagem padrão se não for JSON
-                }
-            }
-        });
-    } else {
-        $('#messageContainer').html(`
+                            }
+                        }
+                    });
+                } else {
+                    $('#messageContainer').html(`
             <div class="alert alert-warning" role="alert">
                 <strong>Atenção!</strong> Nenhum produto selecionado para o carrinho.
             </div>
         `);
-    }
-});
+                }
+            });
 
         });
     </script>
+
+    <?php
+    include '../components/footer.php';
+    include '../components/navMobile.php';
+    ?>
 </body>
 
 </html>
