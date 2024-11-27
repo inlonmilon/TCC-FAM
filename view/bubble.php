@@ -24,8 +24,10 @@
 </head>
 
 <body>
-    <?php
-    include "../components/header.php";
+   <?php
+    include '../components/header.php';
+    include '../components/javascript_view.php';
+    include '../components/logincadastro_modal.php';
     ?>
     <main>
         <section id="headerMobileCaneca"></section>
@@ -38,19 +40,15 @@
                     </div>
                 </div>
                 <div id="apresentacaoBttn">
-                    <a href="bubble_acrilico.php">
+                    <a href="../view/bubble_acrilico.php">
                         <button class="bttnBubble">
-                            <span>bubbles acrílico</span>
-                            <img src="../imagens/website/Forward.png" alt="">
-                        </button>
-                    </a>
-
-                    <a href="bubble_box.php">
-                        <button class="bttnBubble">
-                            <span>bubbles na box</span>
-                            <img src="../imagens/website/Forward.png" alt="">
-                        </button>
-                    </a>
+                        <span>bubbles</span>
+                        <img src="../imagens/website/Forward.png" alt="">
+                    </button></a>
+                    <a href="../view/bubble_box.php"><button class="bttnBubble">
+                        <span>bubbles na box</span>
+                        <img src="../imagens/website/Forward.png" alt="">
+                    </button></a>
                 </div>
             </section>
             <section id="bubblesDisp">

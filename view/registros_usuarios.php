@@ -27,43 +27,56 @@ $usuarios = $usuario->listarUsuarios();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="../styles/backend.css">
+    <link rel="stylesheet" href="../styles/styles.css">
     <title>Registros de Usuários</title>
 </head>
 
 <body>
-    <div class="secao">
-        <h1>Registros de Usuários</h1>
-
-        <div class="mb-3">
-            <input type="text" id="search" class="form-control2" placeholder="Pesquisar">
+    <?php
+    include '../components/header.php';
+    include '../components/javascript_view.php';
+    include '../components/logincadastro_modal.php';
+    ?>
+    <main>
+        <div class="secaoregistros">
+            <h1 class="h1r">Registros de Usuários</h1>
+    
+            <div class="mb-3">
+                <input type="text" id="search" class="form-control2" placeholder="Pesquisar">
+            </div>
+    
+            <div class="table-container">
+                <table class="table" id="usuariosTable">
+                    <thead>
+                        <tr>
+                            <th>ID Atual</th>
+                            <th>ID Novo</th>
+                            <th>Tipo</th>
+                            <th>Nome</th>
+                            <th>Telefone</th>
+                            <th>Email</th>
+                            <th>Nova Senha</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dados serão inseridos aqui via AJAX -->
+                    </tbody>
+                </table>
+            </div>
+    
+            <nav aria-label="Page navigation">
+                <ul class="pagination" id="paginacao">
+                    <!-- Paginação será inserida aqui -->
+                </ul>
+            </nav>
         </div>
-
-        <div class="table-container">
-            <table class="table" id="usuariosTable">
-                <thead>
-                    <tr>
-                        <th>ID Atual</th>
-                        <th>ID Novo</th>
-                        <th>Tipo</th>
-                        <th>Nome</th>
-                        <th>Telefone</th>
-                        <th>Email</th>
-                        <th>Nova Senha</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Dados serão inseridos aqui via AJAX -->
-                </tbody>
-            </table>
-        </div>
-
-        <nav aria-label="Page navigation">
-            <ul class="pagination" id="paginacao">
-                <!-- Paginação será inserida aqui -->
-            </ul>
-        </nav>
-    </div>
+    </main>
+   <?php
+    include '../components/footer.php';
+    include '../components/navmobile.php';
+    ?>
+</body>
 
     <script>
         $(document).ready(function() {
@@ -251,6 +264,5 @@ $usuarios = $usuario->listarUsuarios();
             listarUsuarios();
         });
     </script>
-</body>
 
 </html>

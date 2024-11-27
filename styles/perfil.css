@@ -1,35 +1,38 @@
-/* Estilo geral da página
-/*body {
+:root {
+  --background-color: #ffffff;
+  --section: #ff3333;
+  --details: #ba1a1a;
+  --footer: #494949;
+  --footer2: #373737;
+  --feedback: #e3e3e3;
+  --bttnHeader: #a6a4a4;
+}
+
+/* Estilo geral da página */
+body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f9;
     margin: 0;
     padding: 0;
-}*/
+}
 
-/* Container principal 
+/* Container principal */
 .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 20px;
-}*/
+}
 
-/* Título da página 
-h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: #333;
-    text-transform: uppercase;
-}*/
 
-/* Container dos produtos 
+/* Container dos produtos */
 #product-list {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: space-evenly;
-}*/
+}
 
-/* Estilo do card do produto 
+/* Estilo do card do produto */
 .product-card {
     background-color: #fff;
     border-radius: 10px;
@@ -40,7 +43,7 @@ h2 {
     justify-content: space-between;
     transition: transform 0.3s ease-in-out;
     overflow: hidden;
-	height: 200px;
+    height: 200px;
 }
 
 .product-card:hover {
@@ -49,22 +52,22 @@ h2 {
 
 .product-card.selected {
     transform: scale(1.01); 
-}*/
+}
 
 /* Estilo da imagem do produto */
 .product-image {
     width: 23%;  
     height: 200px;  
-    overflow: hidden;
+    overflow: hidden !important;
     background-color: #eee;
 }
 
 .product-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover !important;
     object-position: center;
-}*/
+}
 
 /* Detalhes do produto */
 .product-details {
@@ -80,7 +83,7 @@ h2 {
     font-weight: bold;
     color: #333;
     margin-bottom: 10px;
-	height: auto;
+    height: auto;
 }
 
 .product-description {
@@ -94,12 +97,11 @@ h2 {
     text-overflow: ellipsis;
 }
 
-
 .product-quantity {
     font-size: 1rem;
     color: #555;
     margin-bottom: 10px;
-	font-weight: bold !important;
+    font-weight: bold !important;
 }
 
 /* Preço do produto */
@@ -112,9 +114,9 @@ h2 {
     width: 20%; 
 }
 
-.product-id{
-	color: #000;
-	font-weight: normal !important;
+.product-id {
+    color: #000;
+    font-weight: normal !important;
 }
 
 /* Estilo das mensagens */
@@ -138,17 +140,15 @@ h2 {
     color: white;
 }
 
-.img-resumo{
-	width: 100px;
-	height: 100px;
-	border-radius: 10px;
+.img-resumo {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
 }
 
-.selected-item{
-	margin-bottom: 15px;
+.selected-item {
+    margin-bottom: 15px;
 }
-
-
 
 /* Responsividade */
 

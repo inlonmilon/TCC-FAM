@@ -1,16 +1,3 @@
-<?php
-session_start();
-
-// Verifica se o usuário está logado. Se não, redireciona para login
-if (!isset($_SESSION['email'])) {
-	header("Location: login.php");
-	exit();
-}
-
-if (isset($_SESSION['nome'])) {
-	$nome_usuario = $_SESSION['nome'];
-}
-?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -20,55 +7,67 @@ if (isset($_SESSION['nome'])) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Perfil - Carrinho de Compras</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="perfil.css">
+	<link rel="stylesheet" href="../styles/perfil.css">
+	<link rel="stylesheet" href="../styles/styles.css">
+	<link rel="stylesheet" href="../styles/backend.css">
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 
 <body>
-	<div class="mt-5 ml-5 mb-5 mr-5">
-		<div id="mensagemnome"></div>
-	</div>
-	<div class="container mt-5">
-		<h2 class="text-center">Carrinho de Compras</h2>
 
-		<!-- Botões de Selecionar Todos e Desmarcar Todos -->
-		<button id="selectAllButton" class="btn btn-primary mb-4">Selecionar Todos</button>
-		<button id="deselectAllButton" class="btn btn-secondary mb-4 ml-3">Desmarcar Todos</button>
-
-		<!-- Lista de produtos -->
-		<div id="product-list"></div>
-
-		<!-- Resumo do Pedido -->
-		<div id="summary-container" class="mt-5" style="display: none;">
-			<h4>Itens Selecionados</h4>
-			<div id="selected-items-summary" class="mt-3">
-				<!-- O resumo dos itens selecionados será exibido aqui -->
+   <?php
+    include '../components/header.php';
+    include '../components/javascript_view.php';
+    include '../components/logincadastro_modal.php';
+    ?>
+	<main>
+		<div class="secaoregistros ml-5 mr-5">
+			<h2 class="text-center h1r mt-8">Carrinho de Compras</h2>
+	
+			<!-- Botões de Selecionar Todos e Desmarcar Todos -->
+			<div class="containerselect">
+				<button id="selectAllButton" class="btn btn-primary mb-4">Selecionar Todos</button>
+				<button id="deselectAllButton" class="btn btn-secondary mb-4 ml-3">Desmarcar Todos</button>
 			</div>
-			<div id="total-summary" class="mt-3">
-				<strong>Total: R$ 0,00</strong>
+	
+			<!-- Lista de produtos -->
+			<div id="product-list"></div>
+	
+			<!-- Resumo do Pedido -->
+			<div id="summary-container" class="mt-5" style="display: none;">
+				<h4>Itens Selecionados</h4>
+				<div id="selected-items-summary" class="mt-3">
+					<!-- O resumo dos itens selecionados será exibido aqui -->
+				</div>
+				<div id="total-summary" class="mt-3">
+					<span>Total: R$ 0,00</span>
+				</div>
 			</div>
+	
+			<div class="containerselect">
+			<!-- Botão para enviar pedido -->
+			<button id="sendOrderButton" class="btn btn-success mt-4" style="display: none;">Enviar Pedido</button>
+	
+			<!-- Botão para remover produtos selecionados -->
+			<button id="removeSelectedButton" class="btn btn-danger mt-4 ml-3" style="display: none;">Remover do Carrinho</button>
+			</div>
+			
+
+	
+			<!-- Contêiner para mensagens de sucesso ou erro -->
+			<div id="message-container" class="mt-3"></div>
 		</div>
-
-		<!-- Botão para enviar pedido -->
-		<button id="sendOrderButton" class="btn btn-success mt-4" style="display: none;">Enviar Pedido</button>
-
-		<!-- Botão para remover produtos selecionados -->
-		<button id="removeSelectedButton" class="btn btn-danger mt-4 ml-3" style="display: none;">Remover do Carrinho</button>
-
-		<!-- Contêiner para mensagens de sucesso ou erro -->
-		<div id="message-container" class="mt-3"></div>
-	</div>
-	<div class="container mt-5">
-		<h2 class="text-center">Meus Pedidos</h2>
-		<div id="pedido-lista"></div>
-	</div>
-
+		<div class="secaoregistros ml-5 mr-5">
+			<h2 class="text-center h1r">Meus Pedidos</h2>
+			<div id="pedido-lista"></div>
+		</div>
+	</main>
+	<?php
+	    include '../components/footer.php';
+	    include '../components/navmobile.php';
+	?>
+</body>
 	<script>
-		// Passa o nome do usuário para uma variável do JavaScript
-		var nomeUsuario = "<?php echo $nome_usuario; ?>";
-
-		// Exibe a mensagem de boas-vindas no elemento com id "mensagem"
-		document.getElementById("mensagemnome").innerHTML = "Perfil de " + nomeUsuario;
 
 		$(document).ready(function() {
 			// Função para buscar os pedidos do usuário logado
@@ -159,7 +158,7 @@ if (isset($_SESSION['nome'])) {
                                 <div class="d-flex align-items-center">
                                     <img src="${item.imagem}" alt="${item.nome}" class="img-resumo">
                                     <div class="ml-3 resumo-info">
-                                        <strong>${item.nome}</strong> <br> Quantidade: ${item.quantidade} <br> Valor: R$ ${item.valor_total.toFixed(2)}
+                                        <span>${item.nome}</span> <br> Quantidade: ${item.quantidade} <br> Valor: R$ ${item.valor_total.toFixed(2)}
                                     </div>
                                 </div>
                             </div>
@@ -169,7 +168,7 @@ if (isset($_SESSION['nome'])) {
 					});
 
 					// Atualizar o total
-					$('#total-summary').html(`<strong>Total: R$ ${total.toFixed(2)}</strong>`);
+					$('#total-summary').html(`<span>Total: R$ ${total.toFixed(2)}</span>`);
 
 					// Exibir os botões e o resumo
 					$('#summary-container').show();
@@ -178,7 +177,7 @@ if (isset($_SESSION['nome'])) {
 				} else {
 					// Caso não haja itens selecionados
 					summaryContainer.html('<div class="alert alert-warning">Nenhum item selecionado.</div>');
-					$('#total-summary').html('<strong>Total: R$ 0,00</strong>');
+					$('#total-summary').html('<span>Total: R$ 0,00</span>');
 
 					// Esconde os botões e o resumo
 					$('#summary-container').hide();
@@ -370,20 +369,19 @@ if (isset($_SESSION['nome'])) {
 								pedidos.forEach(function(pedido) {
 									// Exibir os pedidos
 									$('#pedido-lista').append(`
-                            <div class="card mb-3">
+                            <div class="card p-1 mb-3">
                                 <div class="card-body">
-                                    <h5 class="card-title">Pedido ID${pedido.id_pedido}</h5>
-                                    <p><strong>Status:</strong> ${pedido.status}</p>
-                                    <p><strong>Total:</strong> R$ ${parseFloat(pedido.preco_total).toFixed(2)}</p>
-                                    <div class="produtos">
-                                        <h6>Produtos:</h6>
+                                    <h4 class="card-title mb-1">Pedido ID${pedido.id_pedido}</h4>
+                                    <h4 class="mb-2">Status: ${pedido.status}</h4>
+                                    <h4 class="mb-2 ">Total: R$ ${parseFloat(pedido.preco_total).toFixed(2)}</h4>
+                                    <div class="produtos mt-3">
                                         <ul class="list-group">
                                             ${pedido.produtos.map(function(produto) {
                                                 return `
                                                     <li class="list-group-item d-flex align-items-center">
-                                                        <img src="${produto.img_prod}" alt="${produto.nome_prod}" class="img-thumbnail" style="width: 50px; height: 50px;">
+                                                        <img src="${produto.img_prod}" alt="${produto.nome_prod}" class="img-resumo">
                                                         <div class="ml-3">
-                                                            <strong>${produto.nome_prod}</strong><br>
+                                                            <h4>${produto.nome_prod}</h4><br>
                                                             ${produto.desc_prod}<br>
                                                             R$ ${parseFloat(produto.preco_prod).toFixed(2)}
                                                         </div>
@@ -400,7 +398,7 @@ if (isset($_SESSION['nome'])) {
 								$('#pedido-lista').append('<div class="alert alert-warning">Nenhum pedido encontrado.</div>');
 							}
 						} else {
-							$('#pedido-lista').append('<div class="alert alert-danger">' + response.message + '</div>');
+							$('#pedido-lista').append('<div class="alert alert-warning">' + response.message + '</div>');
 						}
 					},
 					error: function(jqXHR) {
@@ -419,7 +417,5 @@ if (isset($_SESSION['nome'])) {
 			listarPedidos();
 		});
 	</script>
-
-</body>
 
 </html>

@@ -1,24 +1,26 @@
-    /* Container e body básicos */
-    .container-fluid {
-        padding: 2rem !important;
+
+
+    .secaoregistros{
+        padding: 30px !important;
     }
 
-    body {
-        font-family: Arial, sans-serif !important;
-        margin: 0 !important;
-        padding: 20px !important;
-        background-color: #a9a9a9 !important;
+
+
+    .h1r{
+        margin-bottom: 40px !important;
+    }
+
+    .containerselect{
+        display: flex !important;
+        width: 400px !important;
+    
     }
 
     .desc {
         height: 100px !important;
     }
 
-    .secao {
-        background-color: #fff;
-        padding: 30px;
-        border-radius: 10px;
-    }
+
 
     .desc_prod {
         text-align: justify;
@@ -76,9 +78,7 @@
 
     
 
-    h1 {
-        margin-bottom: 20px !important;
-    }
+
 
     /* Container da tabela para rolagem */
     .table-container {
@@ -241,3 +241,4 @@
     }
 
     /* Responsividade para telas menores */
+

@@ -24,59 +24,73 @@ $usuarios = $usuario->listarUsuarios();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registros de Pedidos</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Incluindo jQuery -->
-    <link rel="stylesheet" href="../styles/backend.css"> <!-- Inclua seu CSS -->
+    <link rel="stylesheet" href="../styles/backend.css"> 
+     <link rel="stylesheet" href="../styles/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
-    <div class="secao">
-        <h1>Registros de Pedidos</h1>
+    <?php
+    include '../components/header.php';
+    include '../components/javascript_view.php';
+    include '../components/logincadastro_modal.php';
+    ?>
+    <main>
+        <div class="secaoregistros">
+            <h1 class="h1r" >Registros de Pedidos</h1>
+    
+            <input type="text" id="campo-pesquisa" class="form-control2" placeholder="Pesquisar pedidos...">
+    
+            <div class="table-container">
+                <table id="pedidosTable" class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Usuário</th>
+                            <th>Contato</th>
+                            <th>Produtos</th>
+                            <th>Preço Total</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Os dados dos pedidos serão inseridos aqui pelo AJAX -->
+                    </tbody>
+                </table>
+            </div>
+    
+            <nav aria-label="Page navigation">
+                <ul class="pagination" id="pagination">
 
-        <input type="text" id="campo-pesquisa" class="form-control2" placeholder="Pesquisar pedidos...">
-
-        <div class="table-container">
-            <table id="pedidosTable" class="table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Usuário</th>
-                        <th>Contato</th>
-                        <th>Produtos</th>
-                        <th>Preço Total</th>
-                        <th>Status</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Os dados dos pedidos serão inseridos aqui pelo AJAX -->
-                </tbody>
-            </table>
+                </ul>
+            </nav>
         </div>
+    
+    </main>
+    <?php
+    include '../components/footer.php';
+    include '../components/navmobile.php';
+    ?>
+</body>
 
-        <nav aria-label="Page navigation">
-            <ul class="pagination" id="pagination">
-                <!-- Navegação de páginas será gerada aqui -->
-            </ul>
-        </nav>
-    </div>
-
-    <div class="modal fade" id="modalDescricao" tabindex="-1" aria-labelledby="modalDescricaoLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalDescricaoLabel">Descrição do Pedido</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-                </div>
-                <div class="modal-body">
-                    <textarea id="modalDescText" class="form-control" rows="10" readonly></textarea>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn-form btn-modal" data-bs-dismiss="modal">Fechar</button>
+ <div class="modal fade" id="modalDescricao" tabindex="-1" aria-labelledby="modalDescricaoLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalDescricaoLabel">Descrição do Pedido</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <textarea id="modalDescText" class="form-control" rows="10" readonly></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn-form btn-modal" data-bs-dismiss="modal">Fechar</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
     <script>
         $(document).ready(function() {
@@ -232,7 +246,7 @@ $usuarios = $usuario->listarUsuarios();
 
                 // Botão Anterior
                 if (paginaAtual > 1) {
-                    paginationDiv.append('<button class="pagina" data-pagina="' + (paginaAtual - 1) + '">Anterior</button> ');
+                    paginationDiv.append('<li><button class="pagina " data-pagina="' + (paginaAtual - 1) + '">Anterior</button></li> ');
                 }
 
                 // Determina o intervalo de páginas a serem exibidas
@@ -241,15 +255,15 @@ $usuarios = $usuario->listarUsuarios();
 
                 for (var i = inicio; i <= fim; i++) {
                     if (i === paginaAtual) {
-                        paginationDiv.append('<button class="pagina active" data-pagina="' + i + '">' + i + '</button> '); // Página atual com classe "active"
+                        paginationDiv.append('<li><button class="pagina " data-pagina="' + i + '">' + i + '</button></li> '); // Página atual com classe "active"
                     } else {
-                        paginationDiv.append('<button class="pagina" data-pagina="' + i + '">' + i + '</button> ');
+                        paginationDiv.append('<li><button class="pagina " data-pagina="' + i + '">' + i + '</button></li>');
                     }
                 }
 
                 // Botão Próximo
                 if (paginaAtual < totalPaginas) {
-                    paginationDiv.append('<button class="pagina" data-pagina="' + (paginaAtual + 1) + '">Próximo</button>');
+                    paginationDiv.append('<li><button class="pagina  " data-pagina="' + (paginaAtual + 1) + '">Próximo</button></li>');
                 }
             }
 
@@ -270,6 +284,6 @@ $usuarios = $usuario->listarUsuarios();
             });
         });
     </script>
-</body>
+
 
 </html>
