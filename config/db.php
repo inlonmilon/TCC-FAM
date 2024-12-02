@@ -1,7 +1,7 @@
 <?php
 class Database {
     private $host = "localhost";
-    private $db_name = "ifhostgru_feitoamaop";
+    private $db_name = "ifhostprojetos_feitoamaoh";
     private $username = "root";
     private $password = "";
     public $conn;

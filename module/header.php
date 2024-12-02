@@ -5,12 +5,12 @@
 
         <div id="logo">
             <a href="../view/index.php"><img src="../src/imagens/website/logo.png" alt="" /></a>
+            <div id="nomeSite">
+            <h2>Feito à mão</h2>
+        </div>
         </div>
 
         
-        <div id="nomeSite">
-            <h2>Feito à mão</h2>
-        </div>
 
         <nav>
             <ul>
