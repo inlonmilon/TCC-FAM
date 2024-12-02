@@ -21,45 +21,45 @@
     include '../module/javascript_view.php';
     ?>
 	<main>
-		<div class="secaoregistros ml-5 mr-5">
+		<div class="secaoregistros">
 			<h2 class="text-center h1r mt-8">Carrinho de Compras</h2>
 	
 			<!-- Botões de Selecionar Todos e Desmarcar Todos -->
 			<div class="containerselect">
-				<button id="selectAllButton" class="btn btn-primary mb-4">Selecionar Todos</button>
-				<button id="deselectAllButton" class="btn btn-secondary mb-4 ml-3">Desmarcar Todos</button>
+				<button id="selectAllButton" class="btn btn-primary mb-4 rounded-pill">Selecionar Todos</button>
+				<button id="deselectAllButton" class="btn btn-secondary mb-4 ml-3 rounded-pill">Desmarcar Todos</button>
 			</div>
 	
 			<!-- Lista de produtos -->
 			<div id="product-list"></div>
 	
-			<!-- Resumo do Pedido -->
-			<div id="summary-container" class="mt-5" style="display: none;">
-				<h4>Itens Selecionados</h4>
-				<div id="selected-items-summary" class="mt-3">
-					<!-- O resumo dos itens selecionados será exibido aqui -->
-				</div>
-				<div id="total-summary" class="mt-3">
-					<span>Total: R$ 0,00</span>
-				</div>
+			<!-- Contêiner para mensagens de sucesso ou erro -->
+			<div id="message-container" class="mt-3"></div>
+		</div>
+	<div class="sumary">
+		<div id="summary-container" class="mt-5" style="display: none;">
+			<h4>Itens Selecionados</h4>
+			<div id="selected-items-summary" class="mt-3">
+				<!-- O resumo dos itens selecionados será exibido aqui -->
 			</div>
-	
+			<div id="total-summary" class="mt-3">
+				<span>Total: R$ 0,00</span>
+			</div>
 			<div class="containerselect">
 			<!-- Botão para enviar pedido -->
 			<button id="sendOrderButton" class="btn btn-success mt-4" style="display: none;">Enviar Pedido</button>
 	
 			<!-- Botão para remover produtos selecionados -->
 			<button id="removeSelectedButton" class="btn btn-danger mt-4 ml-3" style="display: none;">Remover</button>
-			</div>
-			
-
-	
-			<!-- Contêiner para mensagens de sucesso ou erro -->
-			<div id="message-container" class="mt-3"></div>
 		</div>
-		<div class="secaoregistros ml-5 mr-5">
+		</div>
+		
+	</div>
+		<div class="secaoregistros">
 			<h2 class="text-center h1r">Meus Pedidos</h2>
+
 			<div id="pedido-lista"></div>
+
 		</div>
 	</main>
 	<?php
@@ -369,28 +369,33 @@
 								pedidos.forEach(function(pedido) {
 									// Exibir os pedidos
 									$('#pedido-lista').append(`
-                            <div class="card p-1 mb-3">
-                                <div class="card-body">
-                                    <h4 class="card-title mb-1">Pedido ID${pedido.id_pedido}</h4>
-                                    <h4 class="mb-2">Status: ${pedido.status}</h4>
-                                    <h4 class="mb-2 ">Total: R$ ${parseFloat(pedido.preco_total).toFixed(2)}</h4>
-                                    <div class="produtos mt-3">
-                                        <ul class="list-group">
+                            <div id="meusPedidos">
+								<div id="meusPHeader">
+									<h3>Pedido ID${pedido.id_pedido}</h3>
+									<div class="pedidoStatus"> 
+										<h4>Status: ${pedido.status}</h4>
+										<h4>Total: R$ ${parseFloat(pedido.preco_total).toFixed(2)}</h4>
+									</div>
+								</div>
+									
+								<div class="descricaoPedidos">
+                                        <ul >
                                             ${pedido.produtos.map(function(produto) {
                                                 return `
-                                                    <li class="list-group-item d-flex align-items-center">
-                                                        <img src="${produto.img_prod}" alt="${produto.nome_prod}" class="img-resumo">
-                                                        <div class="ml-3">
-                                                            <h4>${produto.nome_prod}</h4><br>
-                                                            <h4>${produto.desc_prod}</h4><br>
-                                                            <h4>R$ ${parseFloat(produto.preco_prod).toFixed(2)}</h4>
+                                                    <li>
+														<div class="produtoImg">
+															<img src="${produto.img_prod}" alt="${produto.nome_prod}" class="img-resumo">
+														</div>
+														<div>
+                                                            <h3>${produto.nome_prod}</h3>
+                                                            <h6>${produto.desc_prod}</h6>
+                                                            <h5>R$ ${parseFloat(produto.preco_prod).toFixed(2)}</h5>
                                                         </div>
                                                     </li>
                                                 `;
                                             }).join('')}
                                         </ul>
                                     </div>
-                                </div>
                             </div>
                         `);
 								});

@@ -54,6 +54,7 @@
                 </div>
             </section>
             <div class="resumopedido" id="resumopedido">
+                
                 <div class="summary-container mt-4" id="summaryContainer">
                     <h3>Resumo do Pedido</h3>
                     <div class="summary-list">
@@ -64,8 +65,8 @@
                     </div>
                 </div>
                 <div class="">
-                    <button id="sendButton" class="btn btn-primary">Enviar</button>
-                    <button id="addToCartButton" class="btn btn-primary">Adicionar ao Carrinho</button>
+                    <button id="sendButton" class="btn btn-primary botao rounded-pill">Enviar</button>
+                    <button id="addToCartButton" class="btn btn-primary botao rounded-pill">Adicionar ao Carrinho</button>
                     <div id="messageContainer"></div>
                 </div>
 

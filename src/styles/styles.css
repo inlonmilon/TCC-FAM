@@ -370,7 +370,7 @@ header {
     display: flex;
     background-color: var(--background-color);
     font-weight: 500;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--footer2);
     align-items: center;
     justify-content: space-between;
@@ -408,6 +408,11 @@ header {
     width: 3rem;
   }
 
+  #logo{
+    display: flex;
+    gap: 1rem;
+  }
+
   .perfilBttn {
     height: 3rem;
     width: 3rem;
@@ -432,7 +437,7 @@ header {
     color: var(--footer2);
     font-weight: 700;
     border: none;
-    font-size: 1rem;
+    font-size: .9rem;
     display: flex;
     align-items: center;
   }

@@ -8,6 +8,10 @@
   --bttnHeader: #a6a4a4;
 }
 
+img{
+  max-width: 100%;
+}
+
 .card-body {
   font-weight: 400 !important; /* Ajustando o peso da fonte */
 }
@@ -31,8 +35,17 @@ body {
 #product-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-evenly;
+  gap: 30px;
+  justify-content: center;
+}
+
+
+#pedido-lista{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 8rem;
+  gap: 2rem;
 }
 
 /* Estilo do card do produto */
@@ -40,14 +53,14 @@ body {
   background-color: #fefefe;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  width: 80%;                           
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   transition: transform 0.3s ease-in-out;
   overflow: hidden;
-  height: 200px;
   font-weight: 400 !important;
+  max-width: 70rem;
 }
 
 .product-card:hover {
@@ -154,6 +167,105 @@ body {
   background-color: var(--section) !important;
 }
 
+.containerselect{
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+
+
+.cardPedidos{
+  max-width: 70rem;
+  width: 80%;
+  padding: 3rem;
+}
+
+#summary-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid var(--bttnHeader);
+  border-radius: 1rem;
+  padding: 3rem;
+  max-width: 70rem;
+  width: 80%;
+}
+
+.sumary{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card-body{
+  padding: 2rem 3rem !important;
+  border-radius: 1.5rem;
+}
+
+.list-group-item{
+  padding: 2rem !important;
+}
+
+#meusPedidos{
+  width: 80%;
+  max-width: 70rem;
+}
+
+#pedido-lista{
+  display: flex;
+  justify-content: center;
+}
+
+.descricaoPedidos ul li{
+  border: 1px solid var(--bttnHeader);
+  border-radius: .5rem;
+  padding: .5rem;
+}
+
+#meusPedidos{
+  border: 1px solid var(--bttnHeader);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.descricaoPedidos ul{
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.descricaoPedidos li{
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.produtoImg{
+  width: 10rem;
+  height: 10REM;
+}
+
+.produtoImg img{
+  width: 100%;
+  height: 100%;
+}
+
+.pedidoStatus{
+  display: flex;
+  text-align: end;
+  width: 100%;
+  gap: 1rem;
+}
+
+.pedidoStatus h4{
+  font-size: 1.3rem !important;
+}
+
+
+
 /* Para telas médias (tablets e telas menores) */
 @media (max-width: 768px) {
   #product-list {
@@ -199,10 +311,15 @@ body {
     border-top: 1px solid var(--bttnHeader);
     padding-top: 10px;
   }
+
 }
 
 /* Para telas muito pequenas (celulares em retrato) */
 @media (max-width: 480px) {
+
+  main{
+    padding: 1.5rem;
+  }
   .product-card {
     width: 100%;
     flex-direction: column;
@@ -229,5 +346,74 @@ body {
     padding-right: 0;
     border-top: 1px solid var(--bttnHeader);
     padding-top: 10px;
+  }
+
+  .containerselect{
+    display: flex;
+    gap: 0;
+  }
+
+  #summary-container{
+    padding: 1rem;
+    width: 100%;
+  }
+
+  #meusPedidos{
+    border: 1px solid var(--bttnHeader);
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+
+  .descricaoPedidos ul{
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+  }
+
+  li h3{
+    text-align: center;
+  }
+
+  .descricaoPedidos ul li{
+    border: 1px solid var(--bttnHeader);
+    border-radius: .5rem;
+    padding: .5rem;
+  }
+
+  #meusPedidos{
+    width: 100%;
+  }
+
+  #meusPedidos h5{
+    font-size: 1rem !important;
+  }
+
+  #meusPedidos h6, #meusPedidos h4{
+    font-size: .8rem !important;
+  }
+  
+  .pedidoStatus{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .produtoImg{
+    width: 100%;
+  }
+
+  .produtoImg img{
+    width: 100%;
+    height: max-content;
+  }
+
+  .sumary{
+    margin: 2rem 0;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .secaoregistros {
+    padding: 0 !important;
   }
 }
