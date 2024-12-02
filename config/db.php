@@ -1,9 +1,9 @@
 <?php
 class Database {
     private $host = "localhost";
-    private $db_name = "hostdeprojetos_feitoamaoh";
-    private $username = "hostdeprojetos_feitoamaoh";
-    private $password = "feitoamao123@";
+    private $db_name = "ifhostgru_feitoamaop";
+    private $username = "root";
+    private $password = "";
     public $conn;
 
     public function getConnection() {

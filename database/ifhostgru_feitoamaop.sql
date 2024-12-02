@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Tempo de geração: 13/11/2024 às 18:13
--- Versão do servidor: 10.5.26-MariaDB-cll-lve
--- Versão do PHP: 8.3.13
+-- Host: 127.0.0.1
+-- Tempo de geração: 02-Dez-2024 às 02:15
+-- Versão do servidor: 10.4.27-MariaDB
+-- versão do PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `carrinho`
+-- Estrutura da tabela `carrinho`
 --
 
 CREATE TABLE `carrinho` (
@@ -40,18 +40,18 @@ CREATE TABLE `carrinho` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `carrinho`
+-- Extraindo dados da tabela `carrinho`
 --
 
 INSERT INTO `carrinho` (`id`, `usuario_pedido`, `usuario_contato`, `produto`, `descricao`, `valor_total`, `data_criacao`, `quantidade`, `id_prod`) VALUES
-(136, 'pedro', 'pedro@gmail.com 111111111111111', '1', '1', 4.00, '2024-11-13 16:05:53', 4, 2896),
-(137, 'pedro', 'pedro@gmail.com 111111111111111', '8', '8', 32.00, '2024-11-13 16:05:53', 4, 2903),
-(138, 'pedro', 'pedro@gmail.com 111111111111111', '9', '9', 9.00, '2024-11-13 16:05:53', 1, 2904);
+(136, 'pedro', 'pedro@gmail.com 111111111111111', '1', '1', '4.00', '2024-11-13 16:05:53', 4, 2896),
+(137, 'pedro', 'pedro@gmail.com 111111111111111', '8', '8', '32.00', '2024-11-13 16:05:53', 4, 2903),
+(138, 'pedro', 'pedro@gmail.com 111111111111111', '9', '9', '9.00', '2024-11-13 16:05:53', 1, 2904);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `pedidos`
+-- Estrutura da tabela `pedidos`
 --
 
 CREATE TABLE `pedidos` (
@@ -67,17 +67,16 @@ CREATE TABLE `pedidos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `pedidos`
+-- Extraindo dados da tabela `pedidos`
 --
 
 INSERT INTO `pedidos` (`id_pedido`, `usuario_pedido`, `usuario_contato`, `produtos`, `preco_total`, `status`, `created_at`, `updated_at`, `id_prod`) VALUES
-(459, 'pedro', 'pedro@gmail.com 111111111111111', 'Produto: 1 (Descrição: 1, Quantidade: 4) // Produto: 8 (Descrição: 8, Quantidade: 4) // Produto: 9 (Descrição: 9, Quantidade: 1) // Produto: 10 (Descrição: 10, Quantidade: 4)', 85.00, 'cancelado', '2024-11-13 16:05:51', '2024-11-13 16:07:36', '2896 // 2903 // 2904 // 2905'),
-(460, 'pedro', 'pedro@gmail.com 111111111111111', 'Produto: 8 (Descrição: 8, Quantidade: 4) // Produto: 9 (Descrição: 9, Quantidade: 1)', 137.00, 'pendente', '2024-11-13 16:06:20', '2024-11-13 16:06:20', '2903 // 2904');
+(459, 'pedro', 'pedro@gmail.com 111111111111111', 'Produto: 1 (Descrição: 1, Quantidade: 4) // Produto: 8 (Descrição: 8, Quantidade: 4) // Produto: 9 (Descrição: 9, Quantidade: 1) // Produto: 10 (Descrição: 10, Quantidade: 4)', '85.00', 'cancelado', '2024-11-13 16:05:51', '2024-11-13 16:07:36', '2896 // 2903 // 2904 // 2905');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `produtos`
+-- Estrutura da tabela `produtos`
 --
 
 CREATE TABLE `produtos` (
@@ -90,26 +89,38 @@ CREATE TABLE `produtos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `produtos`
+-- Extraindo dados da tabela `produtos`
 --
 
 INSERT INTO `produtos` (`id_prod`, `nome_prod`, `desc_prod`, `img_prod`, `tipo_prod`, `preco_prod`) VALUES
-(2896, '1', '1', 'uploads/download (1).jpg', 'bubble_bubble', 1.00),
-(2897, '2', '2', 'uploads/download (2).png', 'bubble_box', 2.00),
-(2898, '3', '3', 'uploads/download (3).png', 'bubble_acrilico', 3.00),
-(2899, '4', '4', 'uploads/download (4).png', 'box_luxo', 4.00),
-(2900, '5', '5', 'uploads/download (5).png', 'natal', 5.00),
-(2901, '6', '6', 'uploads/download (6).png', 'dia_das_maes', 6.00),
-(2902, '7', '7', 'uploads/download.png', 'caneca', 7.00),
-(2903, '8', '8', 'uploads/download (4).png', 'bubble_bubble', 8.00),
-(2904, '9', '9', 'uploads/download (5).png', 'bubble_bubble', 9.00),
-(2905, '10', '10', 'uploads/download (6).png', 'bubble_bubble', 10.00),
-(2906, '1', '1', 'uploads/download (4).png', 'caneca', 1.00);
+(2908, 'Caneca Simples Personalizada', 'Caneca personalizada com imagem, acompanhado de chocolates.', '../src/uploads/caneca 1.jpg', 'caneca', '35.00'),
+(2909, 'Bubble simples', 'Cestinho recheado de gostosuras com bubble personalizada Simples.', '../src/uploads/balao dia das maes 2.jpg', 'dia_das_maes', '75.00'),
+(2910, 'Bubble de coração', 'Cestinho recheado de gostosuras com bubble personalizada em formato de coração.', '../src/uploads/balao dia das maes.jpg', 'dia_das_maes', '80.00'),
+(2911, 'Balão personalizado', 'bubble simples com nome personalizado.', '../src/uploads/balao aniversario.jpg', 'aniversario', '60.00'),
+(2915, 'Caneca Térmica Personalizada', 'Caneca térmica personalizada, recheada com chocolates.', '../src/uploads/caneca termica.jpg', 'caneca', '60.00'),
+(2916, 'Bubble com Rosa', 'Cestinho recheado de gostosuras, incluindo um garrafa de vinho, um queijo e um cacho de uvas.\r\nBubble personalizado, com uma rosa vermelha dentro.', '../src/uploads/bubble aniversaio c rosa.jpg', 'aniversario', '120.00'),
+(2917, 'Bubble com glitter', 'Cestinho recheado de gostosuras com bubble simples com glitter.', '../src/uploads/bubble aniversaio kitkat.jpg', 'aniversario', '75.00'),
+(2918, 'Bubble Aniversário | Com Glitter', 'Cestinho recheado de gostosuras com bubble personalizada simples com glitter.', '../src/uploads/bubble aniversaio.jpg', 'aniversario', '70.00'),
+(2919, 'Box de Luxo | Ursinho de Pelúcia', 'Box recheada com ferreiro roche, uma garrafa de vinho e um ursinho de pelúcia', '../src/uploads/box ursinho.jpg', 'box_luxo', '150.00'),
+(2920, 'Box Simples ', 'Box simples personalizada, com chocolates.', '../src/uploads/caixa bombom te amo.jpg', 'box_luxo', '80.00'),
+(2921, 'Box coração simples', 'box de coração recheada com chocolates.', '../src/uploads/potinho coração bombom 2.jpg', 'box_luxo', '50.00'),
+(2922, 'Bubble de Coração', 'caixa de chocolates com Bubble personalizada em formato de coração', '../src/uploads/balao aniversario vovo.jpg', 'aniversario', '65.00'),
+(2924, 'Caneca personalizada', 'Caneca personalizada com imagem, acompanhado de chocolates.', '../src/uploads/IMG_0921.PNG', 'caneca', '40.00'),
+(2925, 'Bubble Simples Personalizada', 'Bubble Simples feita com beixigas.', '../src/uploads/Cópia de IMG_0915.PNG', 'bubble_bubble', '60.00'),
+(2926, 'Box de Café da Manhã', 'Box recheada com itens de café da manhã.', '../src/uploads/IMG_0950.JPG', 'box_luxo', '100.00'),
+(2927, 'Bubble Box com Rosa | Sonho de Valsa', 'Cestinho recheado com chocolates e bubble personalizada, com uma rosa vermelha dentro.', '../src/uploads/bubble box1.jpg', 'bubble_box', '90.00'),
+(2928, 'Box de Luxo', 'Box recheada com ferreiro roche, uma garrafa de vinho e um cacho de uvas.', '../src/uploads/box de luxo.jpg', 'box_luxo', '120.00'),
+(2929, 'Bubble Acrílica com Rosa', 'Bubble Simples feito em acrílico, com uma rosa dentro.', '../src/uploads/IMG_0917.PNG', 'bubble_acrilico', '75.00'),
+(2930, 'Box Coração de Natal', 'Box de natal em formato de coração, recheado de chocolates , envolvidos em laço de cetim e bolinha de Natal.', '../src/uploads/natal caixinha coração.jpg', 'natal', '50.00'),
+(2931, 'Bubble Box com Rosa | Ouro Branco', 'Cestinho recheado com chocolates e bubble personalizada, com uma rosa vermelha dentro.', '../src/uploads/bubble box.jpg', 'bubble_box', '90.00'),
+(2932, 'Box de Nutella', 'Box recheada com nutella, uma garrafa de vinho e chocolates.', '../src/uploads/boz nutella.jpg', 'box_luxo', '95.00'),
+(2933, 'Bubble Ursinho de Pelúcia', 'Bubble simples personalizada com uma pelúcia dentro.', '../src/uploads/bubble ursinho.jpg', 'bubble_bubble', '110.00'),
+(2934, 'Bubble de natal', 'Bubble Box Simples personalizada de natal, recheada com chocolates ouro branco.', '../src/uploads/bubble natal.jpg', 'natal', '85.00');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuarios`
+-- Estrutura da tabela `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -123,68 +134,69 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Despejando dados para a tabela `usuarios`
+-- Extraindo dados da tabela `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `tipo_usuario`, `nome`, `telefone`, `email`, `senha`, `token`) VALUES
-(2147483649, 'administrador', 'pedro', '111111111111111', 'pedro@gmail.com', '$2y$10$JFuD3B05IhNzxi0W5AAeB.QgrfBElkwECDVEZs.Qg0hT2f/hmTpxC', NULL);
+(2147483649, 'administrador', 'pedro', '111111111111111', 'pedro@gmail.com', '$2y$10$JFuD3B05IhNzxi0W5AAeB.QgrfBElkwECDVEZs.Qg0hT2f/hmTpxC', NULL),
+(2147483651, 'comum', 'emy', '111111111111111', 'emily@gmail.com', '$2y$10$oTrZ9MuZRY2A7iGj659VKuf/F746.nWHsnt35kzREYmtwAYWbspvy', NULL);
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices de tabela `carrinho`
+-- Índices para tabela `carrinho`
 --
 ALTER TABLE `carrinho`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `pedidos`
+-- Índices para tabela `pedidos`
 --
 ALTER TABLE `pedidos`
   ADD PRIMARY KEY (`id_pedido`);
 
 --
--- Índices de tabela `produtos`
+-- Índices para tabela `produtos`
 --
 ALTER TABLE `produtos`
   ADD PRIMARY KEY (`id_prod`);
 
 --
--- Índices de tabela `usuarios`
+-- Índices para tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
 -- AUTO_INCREMENT de tabela `carrinho`
 --
 ALTER TABLE `carrinho`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=140;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=150;
 
 --
 -- AUTO_INCREMENT de tabela `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=461;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=462;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id_prod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2908;
+  MODIFY `id_prod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2935;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2147483651;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2147483652;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
