@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Natal</title>
+    <title>Box de Luxo</title>
     <link rel="shortcut icon" type="imagex/png" href="../src/imagens/website/balloon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../src/styles/pedir.css">
@@ -34,11 +34,8 @@
             <section id="apresentacao">
                 <div id="bannerAp">
                     <div id="apresentacaoText">
-                        <h1>Natal</h1>
-                        <p>No Natal, presentear com nossos produtos personalizados é uma forma encantadora de expressar carinho. Nossas boxes de
-                            luxo e canecas personalizadas criam experiências únicas, enquanto nossas bexigas personalizadas, as bubbles,
-                            adicionam um toque divertido e festivo à celebração. Juntos, esses itens transformam o Natal em uma ocasião
-                            memorável e cheia de alegria.</p>
+                        <h1>Box de Luxo</h1>
+                        <p>Nossa box de luxo proporciona uma experiência culinária sofisticada, recheada com delícias gourmet e apresentada com elegância. Perfeita tanto para indulgência pessoal quanto para presentear alguém especial, ela transforma qualquer ocasião em um momento inesquecível com seus sabores exclusivos e requinte.</p>
                     </div>
                 </div>
             </section>

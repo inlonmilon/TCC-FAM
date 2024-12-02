@@ -38,7 +38,7 @@ img {
 }
 
 #headerMobileCaneca{
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url('../imagens/website/caneca\ personalizada\ e\ mini\ panetone.jpg');
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../imagens/website/caneca\ personalizada\ e\ mini\ panetone.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: contain;
@@ -46,7 +46,7 @@ img {
 }
 
 #headerMobileBox{
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url('../imagens/website/BOX\ LUXO\ CACAU\ SHOW.jpg');
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../imagens/website/BOX\ LUXO\ CACAU\ SHOW.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: contain;
@@ -54,7 +54,7 @@ img {
 }
 
 #headerMobileBubbles{
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url('../imagens/website/BUBBLE\ MÉDIO\ DE\ MESA.jpg');
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../imagens/website/BUBBLE\ MÉDIO\ DE\ MESA.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: contain;
@@ -63,7 +63,7 @@ img {
 }
 
 #headerMobileMaes{
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url('../imagens/website/diadasmaes.jpg');
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../imagens/website/diadasmaes.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: contain;
@@ -71,7 +71,7 @@ img {
 }
 
 #headerMobileNatal{
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url('../imagens/website/natalFAM.jpg');
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../imagens/website/natalFAM.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: contain;
@@ -79,7 +79,7 @@ img {
 }
 
 #headerMobileAniv{
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url('../imagens/website/anivFAM.jpg');
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../imagens/website/anivFAM.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: contain;
@@ -87,7 +87,7 @@ img {
 }
 
 #headerMobileBBox{
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url('../imagens/website/BUBBLE\ PELUCIA\ AZUL.jpg');
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../imagens/website/BUBBLE\ PELUCIA\ AZUL.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: contain;
@@ -95,7 +95,7 @@ img {
 }
 
 #headerMobileBAc{
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url('../imagens/website/BOX\ BUBBLE\ ACRILIC.jpg');
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../imagens/website/BOX\ BUBBLE\ ACRILIC.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: contain;
@@ -190,12 +190,11 @@ p {
     row-gap: 3rem;
 }
 
-.vitrine{
+.boxVitrine{
     border-radius: 6px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    
 }
 
 .textVitrine{
@@ -479,20 +478,22 @@ p {
     }
 
     .displayVitrine{
-        display: flex;
+        display: grid;
         grid-template-columns: repeat(4, 1fr);
+        flex-wrap: wrap;
         gap: 1.5rem;
     }
 
-    .vitrine{
+    .boxVitrine{
         width: 50%;
         -webkit-transition: all 200ms ease-in-out;
         -ms-transition: all 200ms ease-in-out;
         -moz-transition: all 200ms ease-in-out;
         transition: all 200ms ease-in-out;
+        flex-wrap: wrap;
     }
 
-    .vitrine:hover{
+    .boxVitrine:hover{
         box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
             rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
         z-index: 2;

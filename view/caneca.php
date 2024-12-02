@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Natal</title>
+    <title>Canecas</title>
     <link rel="shortcut icon" type="imagex/png" href="../src/imagens/website/balloon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../src/styles/pedir.css">
@@ -34,18 +34,19 @@
             <section id="apresentacao">
                 <div id="bannerAp">
                     <div id="apresentacaoText">
-                        <h1>Natal</h1>
-                        <p>No Natal, presentear com nossos produtos personalizados é uma forma encantadora de expressar carinho. Nossas boxes de
-                            luxo e canecas personalizadas criam experiências únicas, enquanto nossas bexigas personalizadas, as bubbles,
-                            adicionam um toque divertido e festivo à celebração. Juntos, esses itens transformam o Natal em uma ocasião
-                            memorável e cheia de alegria.</p>
+                        <h1>Canecas</h1>
+                        <p>Nossas canecas personalizadas são a escolha ideal para quem deseja adicionar um toque
+                            especial ao dia a dia. Cada caneca é feita sob medida, refletindo o estilo e os gostos
+                            individuais do cliente, tornando cada gole uma experiência única e pessoal. Perfeitas para
+                            presentear ou para uso próprio, essas canecas combinam funcionalidade e criatividade,
+                            transformando um simples café ou chá em um momento verdadeiramente especial.</p>
                     </div>
                 </div>
             </section>
             <section id="bubblesDisp">
                 <div id="bubblesDispText">
-                    <h2>Presentes incríveis</h2>
-                    <p>para construir lembranças inesquecíveis</p>
+                    <h2>Canecas disponíveis</h2>
+                    <p>Canecas disponíveis para compra.</p>
                 </div>
                 <div id="boxVitrine">
                     <div class="displayVitrine" id="natalProductsContainer">

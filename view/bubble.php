@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Natal</title>
+    <title>Bubbles</title>
     <link rel="shortcut icon" type="imagex/png" href="../src/imagens/website/balloon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../src/styles/pedir.css">
@@ -34,18 +34,29 @@
             <section id="apresentacao">
                 <div id="bannerAp">
                     <div id="apresentacaoText">
-                        <h1>Natal</h1>
-                        <p>No Natal, presentear com nossos produtos personalizados é uma forma encantadora de expressar carinho. Nossas boxes de
-                            luxo e canecas personalizadas criam experiências únicas, enquanto nossas bexigas personalizadas, as bubbles,
-                            adicionam um toque divertido e festivo à celebração. Juntos, esses itens transformam o Natal em uma ocasião
-                            memorável e cheia de alegria.</p>
+                        <h1>Bubbles</h1>
+                        <p>Nossas bubbles personalizadas são perfeitos para celebrar qualquer ocasião! Escolha o tamanho, a cor e a estampa que mais combinam com a sua festa. Personalizamos com nomes, datas, fotos e logotipos. Feitos com materiais de alta qualidade, nossas bubbles são seguras e duráveis.</p>
                     </div>
+                </div>
+                <div id="apresentacaoBttn">
+                    <a href="bubble_acrilico.php">
+                        <button class="bttnBubble">
+                            <span>bubbles acrílico</span>
+                            <img src="../imagens/website/Forward.png" alt="">
+                        </button>
+                    </a>
+                    <a href="bubble_box.php">
+                        <button class="bttnBubble">
+                            <span>bubbles na box</span>
+                            <img src="../imagens/website/Forward.png" alt="">
+                        </button>
+                    </a>
                 </div>
             </section>
             <section id="bubblesDisp">
                 <div id="bubblesDispText">
-                    <h2>Presentes incríveis</h2>
-                    <p>para construir lembranças inesquecíveis</p>
+                    <h2>Bubbles Disponíveis</h2>
+                    <p>Bubbles disponíveis para compra</p>
                 </div>
                 <div id="boxVitrine">
                     <div class="displayVitrine" id="natalProductsContainer">
