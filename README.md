@@ -42,9 +42,8 @@ O projeto roda **localmente**:
 2. Importe o banco de dados MySQL fornecido para criar as tabelas necessárias.  
 3. Coloque os arquivos do projeto na pasta do servidor local (ex.: `htdocs` no XAMPP).  
 4. Abra o navegador e acesse:  
-´´´
-http://localhost/tcc-fam-main/view/index.php
-´´´
+- http://localhost/tcc-fam-main/view/index.php
+
 
 ## 👥 Autores
 
